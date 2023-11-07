@@ -11,7 +11,7 @@ then,
 
 npm install react-bootstrap bootstrap
 
-You are now ready to run the site and see your cahnges live.
+You are now ready to run the site and see your changes live.
 
 in the terminal type:
 
