@@ -7,10 +7,6 @@ Then using your terminal while in the project directory enter:
 
 npm install
 
-then,
-
-npm install react-bootstrap bootstrap
-
 You are now ready to run the site and see your changes live.
 
 in the terminal type:
