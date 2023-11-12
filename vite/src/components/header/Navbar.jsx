@@ -5,7 +5,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 const navigation = [
   { name: 'Home', href: '/', current: true },
   { name: 'Services', href: '/services', current: false },
-  { name: 'Portfolio', href: '/portfolio', current: false },
+  { name: 'Training', href: '/training', current: false },
+  { name: 'Clients', href: '/clients', current: false },
+  { name: 'About Us', href: '/about', current: false },
+  { name: 'Team', href: '/team', current: false },
   { name: 'Contact', href: '/contact', current: false },
 ]
 
@@ -79,7 +82,7 @@ export default function Example() {
                       href={item.href}
                       className={classNames(
                         item.current ? 'bg-gray-900 text-white' : 'text-black-300 hover:bg-gray-700 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium'
+                        'px-5 py-2 rounded-md text-sm font-medium'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                     >
