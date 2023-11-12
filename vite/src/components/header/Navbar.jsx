@@ -4,7 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Services', href: '/services', current: false },
+  { name: 'Services', href: '/services', current: false, dropdownItems:[{name: 'HVAC', href:'/services/service1'},{name: 'Service2', href:'/services/service2'},{name: 'Service3', href:'/services/service3'}]},
   { name: 'Training', href: '/training', current: false },
   { name: 'Clients', href: '/clients', current: false },
   { name: 'About Us', href: '/about', current: false },
@@ -77,17 +77,55 @@ export default function Example() {
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-black-300 hover:bg-gray-700 hover:text-white',
-                        'px-5 py-2 rounded-md text-sm font-medium'
+                    <Fragment key={item.name}>
+                      {item.dropdownItems ? (
+                        <Menu as="div" className="relative">
+                          <div>
+                            <Menu.Button
+                              className={classNames(
+                                item.current ? 'bg-gray-900 text-white' : 'text-black-300 hover:bg-gray-700 hover:text-white',
+                                'px-5 py-2 rounded-md text-sm font-medium focus:outline-none'
+                              )}
+                            >
+                              {item.name}
+                            </Menu.Button>
+                          </div>
+                          {/* Dropdown items */}
+                          <Menu.Items className="absolute right-0 mt-2 space-y-2 bg-white border border-gray-200 p-2 rounded-md">
+                            {item.dropdownItems.map((dropdownItem,index) => (
+                              <Menu.Item key={dropdownItem.name}>
+                                {({ active }) => (
+                                  <>
+                                  <a
+                                    href={dropdownItem.href}
+                                    className={classNames(
+                                      active ? 'text-black-900' : 'text-black-500',
+                                      'block px-6 py-2 text-sm rounded-md',
+                                      index < item.dropdownItems.length-1 && 'border-b border-black rounded-b-none '
+                                    )}
+                                  >
+                                    {dropdownItem.name}
+                                  </a>
+                                  </>
+                                )}
+                              </Menu.Item>
+                            ))}
+                          </Menu.Items>
+                        </Menu>
+                      ) : (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className={classNames(
+                            item.current ? 'bg-gray-900 text-white' : 'text-black-300 hover:bg-gray-700 hover:text-white',
+                            'px-5 py-2 rounded-md text-sm font-medium'
+                          )}
+                          aria-current={item.current ? 'page' : undefined}
+                        >
+                          {item.name}
+                        </a>
                       )}
-                      aria-current={item.current ? 'page' : undefined}
-                    >
-                      {item.name}
-                    </a>
+                    </Fragment>
                   ))}
                 </div>
               </div>
