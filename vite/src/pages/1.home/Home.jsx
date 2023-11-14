@@ -12,7 +12,7 @@ const Home = () => {
         
         {/* Service Cards */}
         {/* Service card 1: HVAC, Plumbing, Fire Protection, Building Cx, Energy Audits  */}
-        <div class ="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class ="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
             <a href = "#">
               <img class ="rounded-t-lg" src ="/Vaporware/vite/src/assets/hvac_plumbing_fire_protection.png" alt=""/>
@@ -34,11 +34,11 @@ const Home = () => {
               <a href="#">
                 <s2 class="mb-4 text-lg font-bold tracking-tight text-black text-center">Industrial Refrigeration</s2>
               </a>
-              <p class="mt-4 list-disc pl-5 text-gray-500 text-left">Our field experience combined with the knowledge of engineering concepts gives us an advantageous perspective that allows us to design better systems with constructability and practicality in mind as well as conduct and prepare constructability review comments for clients.</p>
+              <p class="mt-4 list-disc pl-5 text-gray-500 text-left">Our promise to you is to provide you the latest technology, latest trends, and up-to-date refrigeration solutions.</p>
             </div>
           </div>
 
-          {/* Service card 3: Industrial Refrigeration  */}
+          {/* Service card 3: Environmental & Regulatory Compliance  */}
           <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
             <a href = "#">
               <img class ="rounded-t-lg" src ="" alt=""/>
@@ -51,7 +51,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Service card 4: Environmental Compliance  */}
+          {/* Service card 4: Training  */}
           <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
             <a href = "#">
               <img class ="rounded-t-lg" src ="" alt=""/>
@@ -64,14 +64,14 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Service card 5: Regulatory Compliance  */}
+          {/* Service card 5: Cypress Engineering Group  */}
           <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
             <a href = "#">
               <img class ="rounded-t-lg" src ="" alt=""/>
             </a>
             <div class="p-5 bg-white">
               <a href="#">
-                <s2 class="mb-4 text-lg font-bold tracking-tight text-black text-center"></s2>
+                <s2 class="mb-4 text-lg font-bold tracking-tight text-black text-center">Cypress Engineering Group</s2>
               </a>
               <p class="mt-4 list-disc pl-5 text-gray-500 text-left">KIE Consultants has transformed into Cypress Engineering Group with all good things about KIE remaining the same, plus new team members and refreshed enthusiasm.</p>
             </div>
