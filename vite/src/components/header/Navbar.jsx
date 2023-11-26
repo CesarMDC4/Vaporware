@@ -91,7 +91,7 @@ export default function Example() {
                             </Menu.Button>
                           </div>
                           {/* Dropdown items */}
-                          <Menu.Items className="absolute right-0 mt-2 space-y-2 bg-white border border-gray-200 p-2 rounded-md">
+                          <Menu.Items className="absolute z-10 right-0 mt-2 space-y-2 bg-white border border-gray-200 p-2 rounded-md">
                             {item.dropdownItems.map((dropdownItem,index) => (
                               <Menu.Item key={dropdownItem.name}>
                                 {({ active }) => (
