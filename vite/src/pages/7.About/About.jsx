@@ -32,7 +32,7 @@ const About = () => {
           }
         `}
       </style>
-      <div className="container">
+      <div className="container mx-auto">
         <header className="section-header">
           <h3>We are...</h3>
           <p>
