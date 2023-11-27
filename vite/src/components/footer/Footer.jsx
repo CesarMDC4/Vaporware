@@ -1,11 +1,13 @@
 
+
+
 const Footer = () => {
     return (
-      <div className="fixed bottom-0 w-full bg-opacity-25 bg-gray-500 text-black">
+      <div className="flex bottom-0 w-full bg-opacity-25 bg-gray-500 text-black">
         <div className="container mx-auto justify-between items-center">
           <div className="text-sm md:text-base flex-row text-left flex sm:flex sm:items-center sm:justify-center md:justify-between mb-10">
             <div className="justify-left mx-20 -mb-4">
-                <img src="/src/assets/CypressEG.png" alt="Logo" className="mb-4 object-scale-down max-h-24"/>
+                <img src="/src/assets/img/logo/CypressEG.png" alt="Logo" className="mb-4 object-scale-down max-h-24"/>
             </div>
             <div className="flex-col mx-20 -mb-8 text-sm space-y-1">
                 <p className="font-bold text-base mb-2">CONTACT US</p>
@@ -26,4 +28,3 @@ const Footer = () => {
   };
   
   export default Footer;
-  

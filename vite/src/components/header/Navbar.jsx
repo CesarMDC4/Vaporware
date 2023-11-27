@@ -1,6 +1,6 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Fragment } from 'react'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -26,13 +26,13 @@ export default function Example() {
               
               {/* Left section for logo */}
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                <a href="/" className="flex flex-shrink-0 items-center">
                   <img
-                    className="block h-14 w-auto" // Adjust the h and w as needed
+                    className="block h-14 w-auto"
                     src="https://www.cypresseg.com/img/logo/CypressEG.png"
                     alt="Cypress"
                   />
-                </div>
+                </a>
               </div>
 
               {/* Center section for mobile menu button */}
