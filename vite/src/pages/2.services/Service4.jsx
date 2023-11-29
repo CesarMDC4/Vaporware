@@ -1,13 +1,13 @@
 import React from 'react'
 import Gallery from '/src/components/gallery/Gallery';
 
-const Service2 = () => {
+const Service4 = () => {
   let slides = [
     {
       
       title: "Project Title",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      image: "/src/assets/img/services/building_cx.png",
+      image: "/src/assets/img/services/regulatory_compliance.png",
     },
     {
       
@@ -28,7 +28,7 @@ const Service2 = () => {
     <div className="p-4">
       <div className="bg-gradient-to-t from-stone-300 via-zinc-300 to-white">
         <div className="w-[80%] m-auto pt-11 ">
-          <p class="text-center text-xl font-bold pb-5">Building Cx & Energy Audits</p>
+          <p class="text-center text-xl font-bold pb-5">Environmental Compliance</p>
           <Gallery slides={slides}/>
         </div>
       </div>
@@ -36,4 +36,4 @@ const Service2 = () => {
   )
 }
 
-export default Service2
+export default Service4
