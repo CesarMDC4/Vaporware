@@ -4,12 +4,13 @@ import { Fragment } from 'react'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Services', href: '/services', current: false, dropdownItems:[{name: 'HVAC', href:'/services/service1'},{name: 'Service2', href:'/services/service2'},{name: 'Service3', href:'/services/service3'}]},
+  { name: 'Services', href: '/services', current: false, dropdownItems:[{name: 'HVAC, Plumbing, & Fire Protection', href:'/services/service1'},{name: 'Building Cx& Energy Audits', href:'/services/service2'},{name: 'Industrial Refrigeration', href:'/services/service3'},{name: 'Enviromental Compliance', href:'/services/service4'},{name: 'Regulatory Compliance', href:'/services/service5'},{name: 'Training & Technical Support ', href:'/services/service6'}]},
   { name: 'Training', href: '/training', current: false },
   { name: 'Clients', href: '/clients', current: false },
   { name: 'About Us', href: '/about', current: false },
   { name: 'Team', href: '/team', current: false },
   { name: 'Contact', href: '/contact', current: false },
+  { name: 'Login', href: '/login', current: false },  
 ]
 
 function classNames(...classes) {
@@ -47,7 +48,7 @@ export default function Example() {
                 </Disclosure.Button>
               </div>
 
-              {/* Right section for user profile and notification bell */}
+              {/* Right section for user profile*/}
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
@@ -63,14 +64,6 @@ export default function Example() {
                   </div>
                   {/* ... Menu Items ... */}
                 </Menu>
-                
-                {/* Notification bell */}
-                <button
-                  type="button"
-                  className="rounded-full p-1 text-gray-400 hover:text-white focus:outline-none ml-3"
-                >
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
               </div>
 
               {/* Right section for navigation links */}
