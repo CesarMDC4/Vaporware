@@ -69,7 +69,7 @@ const Contact = () => {
                     />
                   )}
                 />
-                <button type="submit" className="w-1/4 px-6 py-3 bg-[#003861] text-white font-s  hover-bg-green-600 hover:shadow-lg active:bg-green-600">
+                <button type="submit" className="w-1/4 px-6 py-3 bg-[#003861] rounded-md font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-green-600">
                   Send
                 </button>
               </form>
