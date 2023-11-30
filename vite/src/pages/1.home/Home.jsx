@@ -10,15 +10,16 @@ const Home = () => {
           <p class="pb-5">In-person and online options available.</p>
           <p class="pb-5">Click below to go to our new training registration page for more info and to register.</p>
           <button class="bg-green-900 text-white hover:bg-white hover:text-green-900 font-bold py-2 px-4 rounded-full mb-5">Register Now!</button>
-          
+
           {/* Service Cards */}
-          {/* Service card 1: HVAC, Plumbing, Fire Protection, Building Cx, Energy Audits  */}
-          <div class ="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-              <a href = "#">
-                <img class ="rounded-t-lg" src ="/Vaporware/vite/src/assets/hvac_plumbing_fire_protection.png" alt=""/>
-              </a>
-              <div class="p-5 bg-white">
+          <div class ="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0">
+
+            {/* Service card 1: HVAC, Plumbing, Fire Protection, Building Cx, Energy Audits  */}
+            <div class= "max-w-sm bg-transparent">
+              <div class="p-5 bg-transparent">
+                <div class="flex items-center">
+                  <ion-icon name="cog-outline"></ion-icon>
+                </div>
                 <a href="#">
                   <s1 class="mb-4 text-lg font-bold tracking-tight text-black text-center">HVAC, Plumbing, Fire Protection, Building Cx, Energy Audits</s1>
                 </a>
@@ -27,11 +28,11 @@ const Home = () => {
             </div>
 
             {/* Service card 2: Industrial Refrigeration  */}
-            <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-              <a href = "#">
-                <img class ="rounded-t-lg" src ="" alt=""/>
-              </a>
-              <div class="p-5 bg-white">
+            <div class= "max-w-sm bg-transparent">
+              <div class="p-5 bg-transparent">
+                <div class="flex items-center">
+                  <ion-icon name="snow-outline"></ion-icon>
+                </div>
                 <a href="#">
                   <s2 class="mb-4 text-lg font-bold font-['Open Sans'] tracking-tight text-black text-center">Industrial Refrigeration</s2>
                 </a>
@@ -40,11 +41,12 @@ const Home = () => {
             </div>
 
             {/* Service card 3: Environmental & Regulatory Compliance  */}
-            <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-              <a href = "#">
-                <img class ="rounded-t-lg" src ="" alt=""/>
-              </a>
-              <div class="p-5 bg-white">
+            <div class= "max-w-sm bg-transparent">
+              <a href = "#"></a>
+              <div class="p-5 bg-transparent">
+                <div class="flex items-center">
+                  <ion-icon name="leaf"></ion-icon>
+                </div>
                 <a href="#">
                   <s2 class="mb-4 text-lg font-bold tracking-tight text-black text-center">Environmental & Regulatory Compliance</s2>
                 </a>
@@ -53,11 +55,11 @@ const Home = () => {
             </div>
 
             {/* Service card 4: Training  */}
-            <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-              <a href = "#">
-                <img class ="rounded-t-lg" src ="" alt=""/>
-              </a>
-              <div class="p-5 bg-white">
+            <div class= "max-w-sm bg-transparent">
+              <div class="p-5 bg-transparent">
+                <div class="flex items-center">
+                  <ion-icon name="school"></ion-icon>
+                </div>
                 <a href="#">
                   <s2 class="mb-4 text-lg font-bold tracking-tight text-black text-center">Training</s2>
                 </a>
@@ -66,11 +68,11 @@ const Home = () => {
             </div>
 
             {/* Service card 5: Cypress Engineering Group  */}
-            <div class= "max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+            <div class= "max-w-sm bg-transparent">
               <a href = "#">
                 <img class ="rounded-t-lg" src ="" alt=""/>
               </a>
-              <div class="p-5 bg-white">
+              <div class="p-5 bg-transparent">
                 <a href="#">
                   <s2 class="mb-4 text-lg font-bold tracking-tight text-black text-center">Cypress Engineering Group</s2>
                 </a>
