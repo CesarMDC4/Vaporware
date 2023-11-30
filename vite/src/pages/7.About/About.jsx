@@ -308,7 +308,7 @@ const About = () => {
         `}
       </style>
         <div className="section-header wow fadeInUp" style={fadeInUpStyle}>
-          <h3>Team</h3>
+          
           <p>Here is the competent Cypress Team. Cypress Engineering Group combines experience and energy of its competent engineers from multi-disciplinary backgrounds and high educational degrees.</p>
         </div>
         <div className="row">
