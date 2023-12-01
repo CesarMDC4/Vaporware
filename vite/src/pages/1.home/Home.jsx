@@ -19,13 +19,10 @@ const Home = () => {
 
             {/* Service card 1: HVAC, Plumbing, Fire Protection, Building Cx, Energy Audits  */}
             <div class= "max-w-sm bg-transparent">
+              <ion-icon name="cog-outline"></ion-icon>
               <div class="p-5 bg-transparent">
-                <div class="flex items-center">
-                  <ion-icon name="cog-outline"></ion-icon>
-                  <div class="p-10"></div>
-                </div>
                 <a href="#">
-                  <s1 class="mb-4 text-lg tracking-tight text-black text-center">HVAC, Plumbing, Fire Protection, Building Cx, Energy Audits</s1>
+                  <s2 class="mb-4 text-lg tracking-tight text-black text-center">HVAC, Plumbing, Fire Protection, Building Cx, Energy Audits</s2>
                 </a>
                 <p class="mt-4 list-disc pl-5 text-black text-left">Our field experience combined with the knowledge of engineering concepts gives us an advantageous perspective that allows us to design better systems with constructability and practicality in mind as well as conduct and prepare constructability review comments for clients.</p>
               </div>
@@ -33,11 +30,8 @@ const Home = () => {
 
             {/* Service card 2: Industrial Refrigeration  */}
             <div class= "max-w-sm bg-transparent">
+              <ion-icon name="snow-outline"></ion-icon>
               <div class="p-5 bg-transparent">
-                <div class="flex items-center">
-                  <ion-icon name="snow-outline"></ion-icon>
-                  <div class="p-10"></div>
-                </div>
                 <a href="#">
                   <s2 class="mb-4 text-lg tracking-tight text-black text-center">Industrial Refrigeration</s2>
                 </a>
@@ -45,14 +39,22 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Service card 3: Environmental & Regulatory Compliance  */}
+            {/* Service card 3: Cypress Engineering Group  */}
             <div class= "max-w-sm bg-transparent">
+              <div class="p-5 bg-transparent">
+                <div class="p-7"></div>
+                <a href="#">
+                  <s2 class="mb-4 text-lg tracking-tight text-black text-center">Cypress Engineering Group</s2>
+                </a>
+                <p class="mt-4 list-disc pl-5 text-black text-left">KIE Consultants has transformed into Cypress Engineering Group with all good things about KIE remaining the same, plus new team members and refreshed enthusiasm.</p>
+              </div>
+            </div>
+
+            {/* Service card 4: Environmental & Regulatory Compliance  */}
+            <div class= "max-w-sm bg-transparent">
+              <ion-icon name="leaf"></ion-icon>
               <a href = "#"></a>
               <div class="p-5 bg-transparent">
-                <div class="flex items-center">
-                  <ion-icon name="leaf"></ion-icon>
-                  <div class="p-10"></div>
-                </div>
                 <a href="#">
                   <s2 class="mb-4 text-lg tracking-tight text-black text-center">Environmental & Regulatory Compliance</s2>
                 </a>
@@ -60,31 +62,14 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Service card 4: Training  */}
+            {/* Service card 5: Training  */}
             <div class= "max-w-sm bg-transparent">
+              <ion-icon name="school"></ion-icon>
               <div class="p-5 bg-transparent">
-                <div class="flex items-center">
-                  <ion-icon name="school"></ion-icon>
-                  <div class="p-10"></div>
-                </div>
                 <a href="#">
                   <s2 class="mb-4 text-lg tracking-tight text-black text-center">Training</s2>
                 </a>
                 <p class="mt-4 list-disc pl-5 text-black text-left">We provide RMP/PSM regulatory compliance, ammonia refrigeration, HAZWOPER, and industrial general permit storm water compliance training.</p>
-              </div>
-            </div>
-
-            {/* Service card 5: Cypress Engineering Group  */}
-            <div class= "max-w-sm bg-transparent">
-              <div class="p-5 bg-transparent">
-                <div class="flex items-center">
-                  
-                  <div class="p-10"></div>
-                </div>
-                <a href="#">
-                  <s2 class="mb-4 text-lg tracking-tight text-black text-center">Cypress Engineering Group</s2>
-                </a>
-                <p class="mt-4 list-disc pl-5 text-black text-left">KIE Consultants has transformed into Cypress Engineering Group with all good things about KIE remaining the same, plus new team members and refreshed enthusiasm.</p>
               </div>
             </div>
           </div>
