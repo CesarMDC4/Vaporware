@@ -1,7 +1,7 @@
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 import React from 'react';
 import Slider from 'react-slick';
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 const About = () => {
 
@@ -109,6 +109,9 @@ const About = () => {
         const socialLinkStyle = {
         color: '#fff',
         };
+
+        {/*video at About Us page*/}
+        const videoSource = 'src/assets/video/Safety_Day.mp4';
 
     const logos = [
         // Add the URLs of your logos here
@@ -218,6 +221,20 @@ const About = () => {
                     ))}
                 </Slider>
             </div>  
+
+            {/*Space Befor Video*/}
+            <div className="video-space" style={{ height: '50px' }}></div>
+
+            {/* Video */}
+            <div className="mb-12">
+              <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">Cypress</h1>
+              {/* Video tag */}
+              <video width="80%" controls>
+                <source src={videoSource} type="video/mp4" />
+                Your browser does not support the HTML5 video tag.
+              </video>
+            </div>
+
         </div>
         <div className="mb-12">
             <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">THE TEAM</h1>
