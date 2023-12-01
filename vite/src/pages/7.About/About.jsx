@@ -3,7 +3,9 @@ import "slick-carousel/slick/slick-theme.css";
 import React from 'react';
 import Slider from 'react-slick';
 
+
 const About = () => {
+
 
     const settings = {
         dots: true,
@@ -15,6 +17,7 @@ const About = () => {
         autoplaySpeed: 3000,
         cssEase: 'linear',
     };
+
 
     const logos = [
         // Add the URLs of your logos here
@@ -69,6 +72,7 @@ const About = () => {
         // ...
     ];  
 
+
     return (
     <section id="about">
         <style>
@@ -100,6 +104,8 @@ const About = () => {
             }
         `}
         </style>
+
+
         <div className="container mx-auto">
         <header className="section-header">
             <h3>We are...</h3>
@@ -113,6 +119,26 @@ const About = () => {
             </p>
         </header>
         </div>
+
+
+        <div className="container">
+        <header className="section-header">
+            <h3> Cypress Engineering Facts </h3>
+            <p>
+            Clients
+            </p>
+
+            <p>
+            Projects
+            </p>
+             
+            <p>
+            years of combined experience
+            </p>
+        </header>
+        </div>
+
+
         <div className="mb-12">
             <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">OUR CLIENTS</h1>
             <div className="w-3/4 mx-auto">
@@ -126,6 +152,8 @@ const About = () => {
             </div>  
         </div>
     </section>
+
+
     )
 }
 
