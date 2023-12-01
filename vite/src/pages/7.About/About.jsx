@@ -138,7 +138,6 @@ const About = () => {
         </header>
         </div>
 
-
         <div className="mb-12">
             <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">OUR CLIENTS</h1>
             <div className="w-3/4 mx-auto">
