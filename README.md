@@ -62,7 +62,7 @@
   </a>
 
 
-The Cypress Engineering Group (CEG) seeks to elevate its services through an online portal. Our team, Vaporware, is developing this portal to simplify training services and create a registration process. Our goal is to craft a user-friendly website that streamlines client interactions and exemplifies CEG's expertise and accomplishments.
+The Cypress Engineering Group (CEG) seeks to elevate client experience through an online portal. Our team, Vaporware, is developing this portal to modernize training services and registration while showcasing CEG to prospective clients. The portal will feature way for registered users to sign-up for in-person or online training with an integrated payment system for a seamless registration experience and checkout. Users can create accounts to access a history of their past trainings. An administrator account will facilitate efficient user account management and training service history through a well-maintained database. The portal will also include a contact page for direct communication with CEG and dedicated sections displaying their projects and other services. Team Vaporwave's mission is to engineer a feature rich and user-friendly portal that not only simplifies client interactions but also serves as a testament to the remarkable expertise and achievements of Cypress Engineering Group. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
