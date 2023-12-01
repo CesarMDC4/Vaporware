@@ -3,6 +3,12 @@ import "slick-carousel/slick/slick-theme.css";
 import React from 'react';
 import Slider from 'react-slick';
 
+// global style for border box
+const globalStyles = `
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+`;
 
 const About = () => {
 
@@ -180,6 +186,15 @@ const About = () => {
             position: relative;
             padding-bottom: 15px;
             }
+            .section-header h5 {
+                font-size: 48px;
+                color: #003861;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 700;
+                position: relative;
+                padding-bottom: 10px;
+                }
             .section-header p {
             text-align: center;
             padding-bottom: 30px;
@@ -195,9 +210,16 @@ const About = () => {
             p {
             padding: 0;
             margin: 0 0 30px 0;
+            }q
+            .section-header before {
+                position: absolute;
+                display: block;
             }
         `}
         </style>
+
+        
+
 
 
         <div className="container mx-auto">
@@ -215,21 +237,39 @@ const About = () => {
         </div>
 
 
-        <div className="container">
-        <header className="section-header">
-            <h3> Cypress Engineering Facts </h3>
-            <p>
-            Clients
-            </p>
+        <div className="container mx-auto">
+            <header className="section-header">
+                
+                <div className="facts-header"> 
+                    ::before
+                    <h3> Facts </h3>
+                    ::after
+                    <p>Some magic numbers below. Counting up since 2008.</p>
+                </div>
 
-            <p>
-            Projects
-            </p>
-             
-            <p>
-            years of combined experience
-            </p>
-        </header>
+                <div className="horizontal-info">  
+                    <div className="col-lg-3 col-6 text-center">
+                        <h5><span data-toggle="counter-up">180</span></h5>
+                         <p>Clients</p>
+                    </div>
+
+                    <div className="col-lg-3 col-6 text-center">
+                        <h5><span data-toggle="counter-up">1,350</span></h5>
+                        <p>Projects</p>
+                    </div>
+
+                    <div className="col-lg-3 col-6 text-center">
+                        <h5><span data-toggle="counter-up">78</span></h5>
+                        <p>Years of Combined Experience</p>
+                    </div>
+
+                    <div className="col-lg-3 col-6 text-center">
+                        <h5><span data-toggle="counter-up">9</span></h5>
+                        <p>Hard Workers</p>
+                    </div>
+                </div>
+
+            </header>
         </div>
 
         <div className="mb-12">
@@ -330,8 +370,21 @@ const About = () => {
             padding-right: 15px;
             padding-left: 15px;
           }
+          /* style for the facts portion of the site */ 
+          .horizontal-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+          }
+          .horizontal-info h3, .horizontal-info p {
+                flex: 1;
+                margin: 0;
+          }
+          /*style for the about info portion on the site*/
         `}
       </style>
+
         <div className="section-header wow fadeInUp" style={fadeInUpStyle}>
           
           <p>Here is the competent Cypress Team. Cypress Engineering Group combines experience and energy of its competent engineers from multi-disciplinary backgrounds and high educational degrees.</p>
