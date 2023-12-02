@@ -11,12 +11,12 @@ const Contact = () => {
     },
   });
   return (
-    <div className="flex-1 bg-gradient-to-t from-stone-300 via-zinc-300 to-white flex flex-col justify-center items-center text-center">
+    <div className="text-center bg-gradient-to-t from-stone-300 via-zinc-300 to-white">
       
       <div className="mb-12">
         <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">Contact Us</h1>
       </div>
-      <div class="max-w-screen-xl mx-auto justify-center bg-white-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-0">
+      <div class="max-w-screen-xl mx-auto justify-center  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-0">
           <div class= "max-w-sm bg-transparent">
             <ion-icon name="location-outline"></ion-icon>
             <div class="p-5 bg-transparent">
@@ -46,8 +46,8 @@ const Contact = () => {
           </div>
         </div>
 
-      <div className="xl:container mx-auto mb-32" >
-        <div className="flex justify-center text-xl items-center" style={{height: '250px'}}>
+      <div className="xl:container mx-auto " >
+        <div className="flex justify-center items-center" style={{height: '250px'}}>
           <h1>Send Us a Message</h1>
         </div>
         <div className="px-4 sm:w-2/3 lg:w-1/2 mx-auto"> 
