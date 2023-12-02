@@ -129,43 +129,48 @@ To get a local copy up and running follow these simple example steps.
 
 -   <h5> Mockup Wireframes:</h5>
    
-    <p align='left'>
-    <img src="https://i.imgur.com/zmKd4VM.png" alt="Login Wireframe" width="470" height="320"  >   
+    <p align='center'>
+    <img src="https://i.imgur.com/zmKd4VM.png" alt="Login Wireframe" width="485 height="320"  >   
     </p>
     
     <p align='center'>
     <img src="https://i.imgur.com/xhtevHY.png" alt="Courses Wireframe" width="485" height="320">
     </p>
 
-    <p align='right'>
-    <img src="https://i.imgur.com/8wb5ntw.png" alt="ShoppingCart Wireframe" width="475" height="320">
+    <p align='center'>
+    <img src="https://i.imgur.com/8wb5ntw.png" alt="ShoppingCart Wireframe" width="485" height="320">
     </p>
 
-- <h5> Actual CEG Website (In Development):</h5>
+- <h5> Actual CEG Website (Currently In Development):</h5>
 
-    <p align='left'>
+    <p align='center'> CEG Login Page: </p>
+    <p align='center'>
     <img src="https://i.imgur.com/bJ3U7g8.png" alt="Login Page" width="485" height="330"  >   
     </p>
     
+    <p align='center'> CEG Services Page: </p>
     <p align='center'>
-    <img src="https://i.imgur.com/fWqFwOr.png" alt="Services selection" width="490" height="330">
+    <img src="https://i.imgur.com/fWqFwOr.png" alt="Services selection" width="485" height="330">
      </p>
 
-    <p align='right'>
-    <img src="https://i.imgur.com/WZbpr0D.png" alt="Contact Us" width="410" height="330">
+    <p align='center'> CEG Contact Us Page:</p>
+    <p align='center'>
+    <img src="https://i.imgur.com/WZbpr0D.png" alt="Contact Us" width="485" height="340">
     </p>
     
-    
-    <p align='left'>
+    <p align='center'> CEG Homepage Page: </p>
+    <p align='center'>
     <img src="https://i.imgur.com/EpUWjkp.png" alt="Homepage" width="485" height="340"  >   
     </p>
     
+    <p align='center'> CEG About Us Page: </p>
     <p align='center'>
-    <img src="https://i.imgur.com/9gVXfg1.png" alt="About us" width="490" height="340">
+    <img src="https://i.imgur.com/9gVXfg1.png" alt="About us" width="485" height="340">
      </p>
-
-    <p align='right'>
-    <img src="https://i.imgur.com/FI2wXfL.png" alt="Contact us" width="450" height="340">
+    
+    <p align='center'> CEG Contact Us Page: </p>
+    <p align='center'>
+    <img src="https://i.imgur.com/FI2wXfL.png" alt="Contact us" width="485" height="340">
     </p>
     
     
@@ -175,7 +180,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## CEG SQLite Database Entity Relational Diagram:
 <p align='center'>
-    <img src="https://i.imgur.com/zgeGqN3.png" width="680" height="480">
+    <img src="https://i.imgur.com/zgeGqN3.png" width="680" height="440">
     </p>
 
 
@@ -183,11 +188,22 @@ To get a local copy up and running follow these simple example steps.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Features-->
-## Features
+## Features & Estimated Project Delivery
 
--  Front End UI/UX 
-- User Authentication(Register/ Login)
-- Backend build to handle payment processing, admin/client accounts, and training services. 
+- **Front End UI/UX**
+  - 90% Completed in 190
+  - Finishing Touches completed by: May 2024
+<br></br>
+<br></br>
+- **User Authentication (Register/Login)**
+  - Anticipated Delivery: May 2024
+
+<br></br>
+- **Backend Built**
+  - Payment Processing
+  - User Authentication & Management
+  - Training Services
+  - Anticipated Delivery at end of CSC 191: May 2024
 
 
 
