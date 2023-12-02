@@ -3,7 +3,7 @@
 
 const Footer = () => {
     return (
-      <div className="flex bottom-0 w-full bg-opacity-25 bg-gray-500 text-black">
+      <div className="flex bottom-0 max-w-screen bg-opacity-25 bg-gray-500 text-black">
         <div className="container mx-auto justify-between items-center">
           <div className="text-sm md:text-base flex-row text-left flex sm:flex sm:items-center sm:justify-center md:justify-between mb-10">
             <div className="justify-left mx-20 -mb-4">
@@ -18,10 +18,10 @@ const Footer = () => {
                 <p className="mb-2"><b>Email:</b> info@cypresseg.com</p>
             </div>
           </div>
-        </div>
-        <div className="text-center text-xs md:text-sm bg-opacity-25 bg-gray-500 -mx-8">
-          © {new Date().getFullYear()} <b>Cypress Engineering Group, LLC.</b> All Rights
-          Reserved
+          <div className="text-center text-xs md:text-sm bg-opacity-25 bg-gray-500 ">
+            © {new Date().getFullYear()} <b>Cypress Engineering Group, LLC.</b> All Rights
+            Reserved
+          </div>
         </div>
       </div>
     );
