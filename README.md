@@ -18,7 +18,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://www.cypresseg.com/img/logo/CypressEG.png" alt="Logo" width="200" height="80">
+    <img src="https://i.imgur.com/JlVNX5f.jpg" alt="Logo" width="350" height="350">
   </a>
 
 <h3 align="center">Cypress Engineering Portal</h3>
