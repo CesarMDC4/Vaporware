@@ -1,4 +1,5 @@
 import { Controller, useForm } from 'react-hook-form';
+
 import FormElement from '../../components/FormElement';
 const Contact = () => {
   const onSubmit = data => console.log(data);
@@ -10,21 +11,47 @@ const Contact = () => {
     },
   });
   return (
-    <div>
+    <div className="flex-1 bg-gradient-to-t from-stone-300 via-zinc-300 to-white flex flex-col justify-center items-center text-center">
       
       <div className="mb-12">
-          <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">Contact Us</h1>
-          <div className="w-3/4 mx-auto">
-              
-          </div>  
+        <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">Contact Us</h1>
       </div>
-      
+      <div class="max-w-screen-xl mx-auto justify-center bg-white-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-0">
+          <div class= "max-w-sm bg-transparent">
+            <ion-icon name="location-outline"></ion-icon>
+            <div class="p-5 bg-transparent">
+              <a href="#">
+                <h2 class="mb-4 text-m tracking-tight text-black text-center">Address</h2>
+              </a>
+              <p class="mt-4 list-disc pl-5 text-black underline text-center">8 Harris Court Suite A8, Monterey, CA 93940, USA</p>
+            </div>
+          </div>
+          <div class= "max-w-sm bg-transparent">
+            <ion-icon name="call-outline"></ion-icon>
+            <div class="p-5 bg-transparent">
+              <a href="#">
+                <h2 class="mb-4 text-m tracking-tight text-black text-center">Phone Number</h2>
+              </a>
+              <p class="mt-4 list-disc pl-5 text-black underline text-center">+1 831.218.1802</p>
+            </div>
+          </div>
+          <div class= "max-w-sm bg-transparent">
+            <ion-icon name="mail-outline"></ion-icon>
+            <div class="p-5 bg-transparent">
+              <a href="#">
+                <h2 class="mb-4 text-m tracking-tight text-black text-center">Email</h2>
+              </a>
+              <p class="mt-4 list-disc pl-5 text-black underline text-center">info@cypresseg.com</p>
+            </div>
+          </div>
+        </div>
+
       <div className="xl:container mx-auto mb-32" >
-        <div className="flex justify-center items-center" style={{height: '250px'}}>
+        <div className="flex justify-center text-xl items-center" style={{height: '250px'}}>
           <h1>Send Us a Message</h1>
         </div>
         <div className="px-4 sm:w-2/3 lg:w-1/2 mx-auto"> 
-          <div className="rounded-lg shadow-lg bg-gray -mt-24 py-10 md:py-12 px-4 md:px-6">
+          <div className="rounded-lg shadow-lg bg-white text-left -mt-24 py-10 md:py-12 px-4 md:px-6">
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <Controller
