@@ -196,7 +196,6 @@ const About = () => {
                 text-align: center;
                 font-weight: 700;
                 position: relative;
-                padding-bottom: 10px;
                 }
             .section-header p {
             text-align: center;
@@ -244,9 +243,9 @@ const About = () => {
             <header className="section-header">
                 
                 <div className="facts-header"> 
-                    ::before
+                    
                     <h3> Facts </h3>
-                    ::after
+
                     <p>Some magic numbers below. Counting up since 2008.</p>
                 </div>
 
