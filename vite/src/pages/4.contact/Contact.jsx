@@ -47,7 +47,7 @@ const Contact = () => {
         </div>
 
       <div className="xl:container mx-auto " >
-        <div className="flex justify-center items-center" style={{height: '250px'}}>
+        <div className="flex justify-center text-xl items-center" style={{height: '250px'}}>
           <h1>Send Us a Message</h1>
         </div>
         <div className="px-4 sm:w-2/3 lg:w-1/2 mx-auto"> 
