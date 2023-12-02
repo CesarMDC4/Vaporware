@@ -121,18 +121,62 @@ To get a local copy up and running follow these simple example steps.
 
 
 
-
-## Mockup Designs 
+## Project Design and Wireframes
 <!-- Include mockup of pages and then show some pages from the Dev Prototype(actual website) along with ERD  -->
 
--   <h5>Home Page</h5>
-      <p align='center'>
-          <img src="https://www.cypresseg.com/img/logo/CypressEG.png" alt="placeholder-template" width="100" height="30">
-      </p>
+<img src="https://www.cypresseg.com/img/logo/CypressEG.png" alt="placeholder-template" width="100" height="30">
+<br></br>
 
+-   <h5> Mockup Wireframes:</h5>
+   
+    <p align='left'>
+    <img src="https://i.imgur.com/zmKd4VM.png" alt="Login Wireframe" width="470" height="320"  >   
+    </p>
+    
+    <p align='center'>
+    <img src="https://i.imgur.com/xhtevHY.png" alt="Courses Wireframe" width="485" height="320">
+    </p>
 
+    <p align='right'>
+    <img src="https://i.imgur.com/8wb5ntw.png" alt="ShoppingCart Wireframe" width="475" height="320">
+    </p>
 
+- <h5> Actual CEG Website (In Development):</h5>
 
+    <p align='left'>
+    <img src="https://i.imgur.com/bJ3U7g8.png" alt="Login Page" width="485" height="330"  >   
+    </p>
+    
+    <p align='center'>
+    <img src="https://i.imgur.com/fWqFwOr.png" alt="Services selection" width="490" height="330">
+     </p>
+
+    <p align='right'>
+    <img src="https://i.imgur.com/WZbpr0D.png" alt="Contact Us" width="410" height="330">
+    </p>
+    
+    
+    <p align='left'>
+    <img src="https://i.imgur.com/EpUWjkp.png" alt="Homepage" width="485" height="340"  >   
+    </p>
+    
+    <p align='center'>
+    <img src="https://i.imgur.com/9gVXfg1.png" alt="About us" width="490" height="340">
+     </p>
+
+    <p align='right'>
+    <img src="https://i.imgur.com/FI2wXfL.png" alt="Contact us" width="450" height="340">
+    </p>
+    
+    
+    
+    
+    
+
+## CEG SQLite Database Entity Relational Diagram:
+<p align='center'>
+    <img src="https://i.imgur.com/zgeGqN3.png" width="680" height="480">
+    </p>
 
 
 
@@ -151,10 +195,10 @@ To get a local copy up and running follow these simple example steps.
 
 
 ## Testing 
-
+<br></br>
 
 ## Deployment
-
+<br></br>
 <!-- CONTRIBUTING -->
 ## Developer Instructions 
 
