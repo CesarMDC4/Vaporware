@@ -11,7 +11,7 @@ const Contact = () => {
     },
   });
   return (
-    <div className="text-center bg-gradient-to-t from-stone-300 via-zinc-300 to-white">
+    <div className="text-center bg-gradient-to-t from-stone-300 via-zinc-300 to-white min-h-screen">
       
       <div className="mb-12">
         <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">Contact Us</h1>
