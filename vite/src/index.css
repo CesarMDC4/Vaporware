@@ -6,3 +6,25 @@ ion-icon {
     color: #003861;
     font-size: 48px;
 }
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-header, .table-cell {
+    border: 1px solid #000000;
+    padding: 8px;
+}
+
+.bigger {
+    font-weight: bold; 
+}
+
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
