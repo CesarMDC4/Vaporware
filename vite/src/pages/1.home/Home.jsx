@@ -2,8 +2,8 @@
 const Home = () => {
     return (
       /*Intro Section */
-      <div className="text-center p-4">
-        <div className=" bg-gradient-to-t from-stone-300 via-zinc-300 to-white"> {/* Background color gradient */}   
+      <div className="text-center pt-4">
+        <div className=" bg-gradient-to-t from-stone-300 via-zinc-300 to-white min-h-screen"> {/* Background color gradient */}   
           <p class="text-red-500 font-bold text-xl pb-5">Upcoming training opportunities!</p>
           <p class="font-bold pb-5">Oct & Nov 2023 in Monterey, CA</p>
           <p class="pb-5">Ammonia Refrigeration, Regulatory Compliance, and HAZWOPER Training</p>
