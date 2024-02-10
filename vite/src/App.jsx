@@ -12,9 +12,10 @@ import Service6 from './pages/2.services/Service6';
 import Contact from './pages/4.contact/Contact';
 import Footer from './components/footer/Footer';
 import Training from './pages/5.Training/Training';
-import Clients from './pages/6.Clients/Clients';
+import CourseCatalog from './pages/5.Training/CourseCatalog';
+import Register from './pages/5.Training/Register';
 import About from './pages/7.About/About';
-import Team from './pages/8.Team/Team';
+
 import Login from './pages/9.Login/Login';
 
 
@@ -38,9 +39,10 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/training' element={<Training />} />
-          <Route path='/clients' element={<Clients />} />
+          <Route path='/training/coursecatalog' element={<CourseCatalog />} />
+          <Route path='/training/register' element={<Register />} />
           <Route path='/about' element={<About />} />
-          <Route path='/team' element={<Team />} />
+          
           </Routes>
 
           <Footer/>

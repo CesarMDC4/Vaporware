@@ -1,14 +1,12 @@
 import { Disclosure, Menu } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
   { name: 'Services', href: '/services', current: false, dropdownItems:[{name: 'HVAC, Plumbing, & Fire Protection', href:'/services/service1'},{name: 'Building Cx& Energy Audits', href:'/services/service2'},{name: 'Industrial Refrigeration', href:'/services/service3'},{name: 'Enviromental Compliance', href:'/services/service4'},{name: 'Regulatory Compliance', href:'/services/service5'},{name: 'Training & Technical Support ', href:'/services/service6'}]},
-  { name: 'Training', href: '/training', current: false },
-  { name: 'Clients', href: '/clients', current: false },
+  { name: 'Training', href: '/training', current: false, dropdownItems:[{name: 'Course Catalog', href: '/Training/CourseCatalog'}, {name: 'Register', href: '/Training/Register'}] }, 
   { name: 'About Us', href: '/about', current: false },
-  { name: 'Team', href: '/team', current: false },
   { name: 'Contact', href: '/contact', current: false },
   { name: 'Login', href: '/login', current: false },  
 ]
@@ -64,6 +62,14 @@ export default function Example() {
                   </div>
                   {/* ... Menu Items ... */}
                 </Menu>
+
+                {/* Shopping Cart tab */}
+                <button
+                  type="button"
+                  className="rounded-full p-1 text-gray-400 hover:text-black focus:outline-none ml-3"
+                >
+                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
               </div>
 
               {/* Right section for navigation links */}
