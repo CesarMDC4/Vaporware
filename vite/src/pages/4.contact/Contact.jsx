@@ -108,6 +108,9 @@ const Contact = () => {
                     </div>
                   )}
                 />
+
+                <div className="p-5"><input type="file" name="file upload"/></div>
+                
                 <button type="submit" className="w-1/4 px-6 py-3 bg-[#003861] rounded-md font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-green-600">
                   Send
                 </button>

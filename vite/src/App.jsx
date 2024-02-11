@@ -14,9 +14,8 @@ import Footer from './components/footer/Footer';
 import Training from './pages/5.Training/Training';
 import CourseCatalog from './pages/5.Training/CourseCatalog';
 import Register from './pages/5.Training/Register';
-import About from './pages/7.About/About';
-
-import Login from './pages/9.Login/Login';
+import About from './pages/6.About/About';
+import Login from './pages/7.Login/Login';
 
 
 
