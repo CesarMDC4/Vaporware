@@ -1,7 +1,8 @@
-import training1 from "./assets/img/regulatory_compliance.png";
-import training2 from "./assets/img/refrigeration.png";
-import training3 from "./assets/img/industrial_refrigeration.png";
-import training4 from "./assets/img/Hazwoper.png";
+import training1 from "../../assets/img/services/regulatory_compliance.png";
+import training2 from "../../assets/img/services/refrigeration.png";
+import training3 from "../../assets/img/services/industrial_refrigeration.png";
+import training4 from "../../assets/img/services/Hazwoper.png";
+
 export const Products = [
     {
         id: "CEG-TR-101",
@@ -31,6 +32,4 @@ export const Products = [
         productImage:training4,
         productDescription: "description",
     },
-
-
 ]
