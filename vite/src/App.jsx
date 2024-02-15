@@ -14,11 +14,9 @@ import Footer from './components/footer/Footer';
 import Training from './pages/5.Training/Training';
 import CourseCatalog from './pages/5.Training/CourseCatalog';
 import Register from './pages/5.Training/Register';
-import About from './pages/7.About/About';
-
-import Login from './pages/9.Login/Login';
-
-
+import About from './pages/6.About/About';
+import Login from './pages/7.Login/Login';
+import Cart from './pages/9.Cart/Cart';
 
 
 function App() {
@@ -42,6 +40,7 @@ function App() {
           <Route path='/training/coursecatalog' element={<CourseCatalog />} />
           <Route path='/training/register' element={<Register />} />
           <Route path='/about' element={<About />} />
+          <Route path='/cart' element={<Cart />} />
           
           </Routes>
 

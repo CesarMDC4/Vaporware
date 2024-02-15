@@ -43,7 +43,13 @@ const CourseCatalog = () => {
           </div>
 
           {/* Margin */}
-          <div style={{ marginBottom: '100px' }}></div>
+          <div style={{ marginBottom: '10%' }}></div>
+          <div class="relative flex py-5 items-center">
+            <div class="flex-grow border-t border-gray-400"></div>
+            <span class="flex-shrink mx-4 text-gray-400"></span>
+            <div class="flex-grow border-t border-gray-400"></div>
+          </div>
+
 
           <div style={{ textAlign: 'center'}}>
             <h1 style={{fontSize: '2rem' }}>Next Training: Feb & March 2024 in Monterey, CA!</h1>

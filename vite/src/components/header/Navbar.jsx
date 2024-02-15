@@ -1,6 +1,7 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
+import { Link } from 'react-router-dom';
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -64,12 +65,11 @@ export default function Example() {
                 </Menu>
 
                 {/* Shopping Cart tab */}
-                <button
-                  type="button"
+                <Link to="/cart"
                   className="rounded-full p-1 text-gray-400 hover:text-black focus:outline-none ml-3"
                 >
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </Link>
               </div>
 
               {/* Right section for navigation links */}
