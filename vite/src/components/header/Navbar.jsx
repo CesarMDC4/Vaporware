@@ -63,13 +63,6 @@ export default function Example() {
                   </div>
                   {/* ... Menu Items ... */}
                 </Menu>
-
-                {/* Shopping Cart tab */}
-                <Link to="/cart"
-                  className="rounded-full p-1 text-gray-400 hover:text-black focus:outline-none ml-3"
-                >
-                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                </Link>
               </div>
 
               {/* Right section for navigation links */}
@@ -126,6 +119,11 @@ export default function Example() {
                       )}
                     </Fragment>
                   ))}
+                    {/* Shopping Cart tab */}
+                    <Link to="/cart"
+                        className="rounded-full p-1 text-gray-400 hover:text-black focus:outline-none ml-3">
+                    <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                    </Link>
                 </div>
               </div>
             </div>
