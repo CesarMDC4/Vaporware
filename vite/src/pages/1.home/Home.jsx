@@ -3,7 +3,7 @@ const Home = () => {
     return (
       /*Intro Section */
       <div className="text-center pt-4">
-        <div className=" bg-gradient-to-t from-stone-300 via-zinc-300 to-white min-h-screen"> {/* Background color gradient */}   
+        <div className="pb-4 bg-gradient-to-t from-stone-300 via-zinc-300 to-white min-h-screen"> {/* Background color gradient */}   
           <p class="text-red-500 font-bold text-xl pb-5">Upcoming training opportunities!</p>
           <p class="font-bold pb-5">Oct & Nov 2023 in Monterey, CA</p>
           <p class="pb-5">Ammonia Refrigeration, Regulatory Compliance, and HAZWOPER Training</p>
@@ -15,10 +15,10 @@ const Home = () => {
           <div class="my-24"></div>
 
           {/* Service Cards */}
-          <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0">
+          <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
 
             {/* Service card 1: HVAC, Plumbing, Fire Protection, Building Cx, Energy Audits  */}
-            <div class= "max-w-sm bg-transparent">
+            <div class= "max-w-sm bg-white shadow-md rounded-lg pt-4">
               <ion-icon name="cog-outline"></ion-icon>
               <div class="p-5 bg-transparent">
                 <a href='/services/service1'>
@@ -29,7 +29,7 @@ const Home = () => {
             </div>
 
             {/* Service card 2: Industrial Refrigeration  */}
-            <div class= "max-w-sm bg-transparent">
+            <div class= "max-w-sm bg-white shadow-md rounded-lg pt-4">
               <ion-icon name="snow-outline"></ion-icon>
               <div class="p-5 bg-transparent">
                 <a href='/services/service3'>
@@ -40,7 +40,7 @@ const Home = () => {
             </div>
 
             {/* Service card 3: Cypress Engineering Group  */}
-            <div class= "max-w-sm bg-transparent">
+            <div class= "max-w-sm bg-white shadow-md rounded-lg pt-4">
               <div class="p-5 bg-transparent">
                 <div class="p-7"></div>
                 <a href='/about'>
@@ -51,7 +51,7 @@ const Home = () => {
             </div>
 
             {/* Service card 4: Environmental & Regulatory Compliance  */}
-            <div class= "max-w-sm bg-transparent">
+            <div class= "max-w-sm bg-white shadow-md rounded-lg pt-4">
               <ion-icon name="leaf"></ion-icon>
               
               <div class="p-5 bg-transparent">
@@ -63,7 +63,7 @@ const Home = () => {
             </div>
 
             {/* Service card 5: Training  */}
-            <div class= "max-w-sm bg-transparent">
+            <div class= "max-w-sm bg-white shadow-md rounded-lg pt-4">
               <ion-icon name="school"></ion-icon>
               <div class="p-5 bg-transparent">
                 <a href='/services/service6'>
