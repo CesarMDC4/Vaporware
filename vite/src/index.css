@@ -26,5 +26,35 @@ ion-icon {
     margin: 0 auto;
 }
 
+.ccTitle, .nextTraining {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2rem;
+}
 
+.products {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.product {
+    border-radius: 15px;
+    width: 300px;
+    height: 350px;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product .description {
+    text-align: center;
+}
+
+.product img {
+    width: 400px;
+}
 
