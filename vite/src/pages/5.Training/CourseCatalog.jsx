@@ -1,6 +1,9 @@
 import React from 'react';
 import Card from '/src/components/card/Card.jsx';
 import Table from '/src/components/table/table.jsx';
+import { Products } from '/src/pages/8.Products/products';
+import { Product } from '/src/pages/8.Products/product.jsx';
+import '/src/index.css';
 
 const CourseCatalog = () => {
   const tableData = [
@@ -12,68 +15,50 @@ const CourseCatalog = () => {
 
     return (
       /*Intro Section */
-      <div className="text-center p-4">
-        <div className=" bg-gradient-to-t from-stone-300 via-zinc-300 to-white"> {/* Background color gradient */}   
-          <p className="text-500 font-bold text-xl pb-5" style={{ fontSize: '2rem' }}>Course Catalog</p>
-          <div className="flex justify-center">
-            <Card
-              imageSrc ='/src/assets/img/services/regulatory_compliance.png'
-              title="CalARP/RMP/PSM/CERS/Tier II Regulatory Compliance"
-              desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut velit a nisi aliquet fringilla. Fusce con"
-              price="500"
-            />
-            <Card
-              imageSrc="/src/assets/img/services/refrigeration.png"
-              title="Basic Industrial Ammonia Refrigeration (RETA IR Book 1)"
-              desc="orem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut velit a nisi aliquet fringilla. Fusce con"
-              price="500"
-            /> 
-            <Card
-              imageSrc="/src/assets/img/services/refrigeration.png"
-              title="Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)"
-              desc="short desc"
-              price="500"
-            />
-            <Card
-              imageSrc="/src/assets/img/services/refrigeration.png"
-              title="HAZWOPER 8-hour Refresher Training"
-              desc="orem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut velit a nisi aliquet fringilla. Fusce con"
-              price="500"
-            />
+      <div className='courseCatalog'>
+        <div className="background" style={{ backgroundImage: 'linear-gradient(to top, #D1D5DB, #A1A1AA, #FFFFFF)', border: 'none' }}> {/* Background color gradient */}
+          <div className='ccTitle'>
+            <h1>Course Catalog</h1>
+          </div>
+          <div className='products'>
+            {Products.map((product) => ( 
+              <Product data={product} />
+            ))}
           </div>
 
-          {/* Margin */}
-          <div style={{ marginBottom: '10%' }}></div>
-          <div class="relative flex py-5 items-center">
-            <div class="flex-grow border-t border-gray-400"></div>
-            <span class="flex-shrink mx-4 text-gray-400"></span>
-            <div class="flex-grow border-t border-gray-400"></div>
+          <div className='nextTraining'>
+            <h1>Next Training: Feb & March 2024 in Monterey, CA!</h1>
           </div>
 
+          <div className='ntInfo'>
+            <p>Attend either in person at the Cypress Engineering Group Training Classroom or on Zoom</p>
+          </div>
+          <div className='address'>
+            <p>8 Harris Court, Suite A6, Monterey, CA 93940</p>
+          </div>
+          <div className='ntInfo'>
+            <p>We look forward to seeing you at our upcoming training sessions!</p>
+          </div>
+          <div className='tableTitle'>
+            <h1>Upcoming Training Dates</h1>
+          </div>
 
-          <div style={{ textAlign: 'center'}}>
-            <h1 style={{fontSize: '2rem' }}>Next Training: Feb & March 2024 in Monterey, CA!</h1>
-            <div style={{ marginBottom: '20px' }}></div>
-            <p className="text-500 text-xl pb-5">Attend either in person at the Cypress Engineering Group Training Classroom or on Zoom</p>
-            <p className="text-500 text-xl pb-5" style={{ textDecoration: 'underline' }}>8 Harris Court, Suite A6, Monterey, CA 93940</p>
-            <p className="text-500 text-xl pb-5">We look forward to seeing you at our upcoming training sessions!</p>
+          <div className='table'>
+            <Table data={tableData} />
           </div>
-          <p className="text-500 font-bold text-xl pb-5">Upcoming Training Dates</p>
-          {/* Table Section */}
-          <Table data={tableData} />
-          <div style={{ marginBottom: '50px' }}></div>
-          <div className='text-500 text-xl pb-5'>
-            <div style={{ textAlign: 'center'}}>
-              <p className='bullet-point'>Training Fee Includes:</p>
-              <div style={{ marginBottom: '10px' }}></div>
-              <p className='bullet-point'>&bull; Training materials</p>
-              <p className='bullet-point'>&bull; Continental breakfast and lunch for in-person trainees</p>
-              <p className='bullet-point'>&bull; Certificate upon completion</p>
-              <p className='bullet-point'style={{ color: 'red' }}>Register now!</p>
-            </div>
+          <div className='bpTitle'>
+            <h1>Training Fee Includes:</h1>
           </div>
+          <div className='bulletPoint'>
+            <p>Training materials</p>
+            <p>Continental breakfast and lunch for in-person trainees</p>
+            <p>Certificate upon completion</p>
+            <p style={{ color: 'red', textDecoration: 'underline'}}>Register now!</p>
+          </div>
+          </div>
+
         </div>
-      </div>
+      
     )
   }
   
