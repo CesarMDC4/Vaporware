@@ -351,7 +351,7 @@ const About = () => {
               right: 0;
               bottom: 0;
               transition: 0.2s;
-              color: trasparent; 
+              color: white; 
             }
             .img-fluid {
               max-width: 100%;
