@@ -26,22 +26,29 @@ ion-icon {
     margin: 0 auto;
 }
 
-.ccTitle, .nextTraining {
+.ccTitle, .nextTraining, .tableTitle {
     margin-top: 50px;
     text-align: center;
     font-size: 2rem;
 }
 
+.ntInfo, .address {
+    font-size: 18px;
+    text-align: center;
+}
+
 .products {
     width: 100%;
     height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .product {
     border-radius: 15px;
-    width: 300px;
+    width: 400px;
     height: 350px;
     margin: 100px;
     display: flex;
@@ -57,4 +64,35 @@ ion-icon {
 .product img {
     width: 400px;
 }
+
+.address {
+    text-decoration: underline;
+
+}
+
+.table {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tableTitle {
+    margin-bottom: 10px;
+}
+
+.bulletPoint {
+    text-align: center;
+    font-size: 18px;
+}
+
+.bpTitle {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+
+
+
 

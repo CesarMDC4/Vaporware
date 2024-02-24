@@ -28,12 +28,36 @@ const CourseCatalog = () => {
 
           <div className='nextTraining'>
             <h1>Next Training: Feb & March 2024 in Monterey, CA!</h1>
-            <p className=''></p>
-
           </div>
-        </div>
 
-      </div>
+          <div className='ntInfo'>
+            <p>Attend either in person at the Cypress Engineering Group Training Classroom or on Zoom</p>
+          </div>
+          <div className='address'>
+            <p>8 Harris Court, Suite A6, Monterey, CA 93940</p>
+          </div>
+          <div className='ntInfo'>
+            <p>We look forward to seeing you at our upcoming training sessions!</p>
+          </div>
+          <div className='tableTitle'>
+            <h1>Upcoming Training Dates</h1>
+          </div>
+
+          <div className='table'>
+            <Table data={tableData} />
+          </div>
+          <div className='bpTitle'>
+            <h1>Training Fee Includes:</h1>
+          </div>
+          <div className='bulletPoint'>
+            <p>Training materials</p>
+            <p>Continental breakfast and lunch for in-person trainees</p>
+            <p>Certificate upon completion</p>
+            <p style={{ color: 'red', textDecoration: 'underline'}}>Register now!</p>
+          </div>
+          </div>
+
+        </div>
       
     )
   }
