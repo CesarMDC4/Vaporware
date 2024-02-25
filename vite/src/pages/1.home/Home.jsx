@@ -39,16 +39,18 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Service card 3: Cypress Engineering Group  */}
-            <div class= "max-w-sm bg-white shadow-md rounded-lg pt-4">
-              <div class="p-5 bg-transparent">
-                <div class="p-7"></div>
-                <a href='/about'>
-                  <s2 class="mb-4 text-lg tracking-tight text-black text-center hover:text-blue-600">Cypress Engineering Group</s2>
-                </a>
-                <p class="mt-4 list-disc pl-5 text-black text-left">KIE Consultants has transformed into Cypress Engineering Group with all good things about KIE remaining the same, plus new team members and refreshed enthusiasm.</p>
+          {/* Service card 3: Cypress Engineering Group  */}
+          <div className="max-w-sm bg-white shadow-md rounded-lg pt-4">
+            <div className="p-5 bg-transparent" style={{ marginBottom: "+20px" }}>
+              <div className="flex justify-center items-center mb-4"> 
+                <img src="/src/assets/img/logo/CypressEG.png" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
               </div>
+              <a href='/about' className="block">
+                <h2 className="mb-4 text-lg tracking-tight text-black text-center hover:text-blue-600">Cypress Engineering Group</h2>
+              </a>
+              <p className="mt-4 list-disc pl-5 text-black text-left">KIE Consultants has transformed into Cypress Engineering Group with all good things about KIE remaining the same, plus new team members and refreshed enthusiasm.</p>
             </div>
+          </div>
 
             {/* Service card 4: Environmental & Regulatory Compliance  */}
             <div class= "max-w-sm bg-white shadow-md rounded-lg pt-4">

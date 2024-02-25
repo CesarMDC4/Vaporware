@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyA-FXHwEXNgs-y5vbjBrC46w8qAB0QaniI",
@@ -71,7 +72,7 @@ export default function Login() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="#" className="font-semibold hover:text-green-600">
+                  <a href="/reset" className="font-semibold hover:text-green-600">
                     Forgot password?
                   </a>
                 </div>
@@ -99,12 +100,7 @@ export default function Login() {
               </button>
             </div>
           </form>
-
           <p className="mt-10 text-center text-sm text-zinc-950">
-            Not a member?{' '}
-            <a href="#" className="font-extrabold leading-6 text-zinc-950 hover:text-green-500">
-              Start a 14 day free trial
-            </a>
           </p>
         </div>
       </div>

@@ -303,7 +303,7 @@ const About = () => {
 
           </div>
           <div className="mb-12">
-              <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">THE TEAM</h1>
+              <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">THE CYPRESS TEAM</h1>
               <div className="w-3/4 mx-auto">
                   
           
