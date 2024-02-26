@@ -1,6 +1,6 @@
-import { Disclosure, Menu } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
-import { Fragment } from 'react'
+import { Disclosure, Menu } from '@headlessui/react';
+import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -10,6 +10,7 @@ const navigation = [
   { name: 'About Us', href: '/about', current: false },
   { name: 'Contact', href: '/contact', current: false },
   { name: 'Login', href: '/login', current: false },  
+  { name: 'History', href: '/history', current: false },
 ]
 
 function classNames(...classes) {
