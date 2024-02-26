@@ -1,6 +1,6 @@
-import { Disclosure, Menu } from '@headlessui/react';
-import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Fragment } from 'react';
+import { Disclosure, Menu } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
+import { Fragment } from 'react'
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -10,7 +10,6 @@ const navigation = [
   { name: 'About Us', href: '/about', current: false },
   { name: 'Contact', href: '/contact', current: false },
   { name: 'Login', href: '/login', current: false },  
-  { name: 'History', href: '/history', current: false },
 ]
 
 function classNames(...classes) {
@@ -47,6 +46,7 @@ export default function Example() {
                   )}
                 </Disclosure.Button>
               </div>
+
 
 
               {/* Right section for navigation links */}
@@ -103,12 +103,8 @@ export default function Example() {
                       )}
                     </Fragment>
                   ))}
-                    {/* Shopping Cart tab */}
-                    <Link to="/cart"
-                        className="rounded-full p-1 text-gray-400 hover:text-black focus:outline-none ml-3">
-                    <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                    </Link>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -117,6 +113,39 @@ export default function Example() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
+                <Fragment key ={item.name}>
+                  {item.dropdownItems ? (
+                    <Menu as ="div" className="relative">
+                      <div>
+                        <Menu.Button 
+                          className = {classNames(
+                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            'block px-3 py-2 rounded-md text-base font-medium'
+                          )}
+                        >
+                          {item.name}
+                        </Menu.Button>
+                      </div>
+                      {/*Mobile Menu Dropdown items*/}
+                      <Menu.Items className="absolute z-10 right-0 mt-2 space-y-2 bg-white border border-gray-200 p-2 rounded-md">
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <Menu.Item key = {dropdownItem.name}>
+                            {({active}) => (
+                              <a
+                                href={dropdownItem.href}
+                                className = {classNames(
+                                  active ? 'text-black-900' : 'text-black-500',
+                                  'block px-4 py-2 text-sm rounded-md'
+                                )}
+                              >
+                                {dropdownItem.name}
+                              </a>
+                            )}
+                          </Menu.Item>
+                        ))}
+                      </Menu.Items>
+                    </Menu>
+              ):(
                 <Disclosure.Button
                   key={item.name}
                   as="a"
@@ -129,6 +158,8 @@ export default function Example() {
                 >
                   {item.name}
                 </Disclosure.Button>
+              )}
+              </Fragment>
               ))}
             </div>
           </Disclosure.Panel>
