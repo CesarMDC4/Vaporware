@@ -11,8 +11,12 @@ const Home = () => {
           <p class="pb-5">Click below to go to our new training registration page for more info and to register.</p>
           <button class="bg-green-900 text-white hover:bg-white hover:text-green-900 font-bold py-2 px-4 rounded-full mb-5">Register Now!</button>
 
+          <div className="flex justify-center items-center mb-4"> 
+            <img src="/src/assets/img/logo/CypressEG.png" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
+          </div>
+
           {/* Space between header and service cards */}
-          <div class="my-24"></div>
+          <div class="my-10"></div>
 
           {/* Service Cards */}
           <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
