@@ -53,7 +53,9 @@ const CourseCatalog = () => {
             <p>Training materials</p>
             <p>Continental breakfast and lunch for in-person trainees</p>
             <p>Certificate upon completion</p>
-            <p style={{ color: 'red', textDecoration: 'underline'}}>Register now!</p>
+            <a href = "http://localhost:5173/Training/Register" className = "button-link" style = {{ color: 'red', fontWeight: 'bold'}}>
+              [Register Now]
+            </a>
           </div>
           </div>
 
