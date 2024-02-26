@@ -1,8 +1,8 @@
+import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import FormElement from '../../components/FormElement';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Contact = () => {
-  const onSubmit = data => console.log(data);
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       name: '',
@@ -11,9 +11,25 @@ const Contact = () => {
     },
   });
 
+  const [captchaToken, setCaptchaToken] = useState('');
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+  };
+
+  const onSubmit = (data) => {
+    if (captchaToken) {
+      console.log('Form data:', data);
+      console.log('Captcha token:', captchaToken);
+      // Proceed with form submission
+    } else {
+      alert('Please complete the reCAPTCHA verification.');
+    }
+  };
+
   return (
     <div className="text-center bg-gradient-to-t from-stone-300 via-zinc-300 to-white min-h screen">
-      
+
       <div className="mb-12">
         <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">Contact Us</h1>
       </div>
@@ -109,8 +125,16 @@ const Contact = () => {
                   )}
                 />
 
-                <div className="p-5"><input type="file" name="file upload"/></div>
-                
+                <div className="p-5"><input type="file" name="file upload" /></div>
+
+                {/* Google reCAPTCHA */}
+                <div className="p-5">
+                  <ReCAPTCHA
+                    sitekey="6Le24n8pAAAAAJP-ldwbtKybwG8gDFT_p3Xrfwsr" // Replace with your reCAPTCHA site key
+                    onChange={handleCaptchaChange}
+                  />
+                </div>
+                {/* Submit button */}
                 <button type="submit" className="w-1/4 px-6 py-3 bg-[#003861] rounded-md font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-green-600">
                   Send
                 </button>
