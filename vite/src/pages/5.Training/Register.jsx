@@ -7,7 +7,7 @@ const Register = () => {
       {/* Embedded Google Doc form link to Cypress Engineering Registration form */}
       <iframe
         title="Google Doc Form"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSczcAzQacJndpHIUeg5i5oFpJT-QF4zPUgr2zGlK_9OdrFQGw/viewform?embedded=true"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeAIn15fwUp_zKxzZX0a2jtdPFKbYno-kIg16kIkh1Tt54iBQ/viewform"
         width="640"
         height="800"
       >
