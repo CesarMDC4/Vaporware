@@ -103,8 +103,12 @@ export default function Example() {
                       )}
                     </Fragment>
                   ))}
-                </div>
-                
+                    {/* Shopping Cart tab */}
+                    <Link to="/cart"
+                      className="rounded-full p-1 text-gray-400 hover:text-black focus:outline-none ml-3">
+                    <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                    </Link>
+                </div>              
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Products } from '../8.Products/products.js';
 
 const Cart = () => {
-    const [cart, setCart] = useState(Products.map(product => ({ ...product, quantity: 0 })));
+    const [cart, setCart] = useState(Products.map(product => ({ ...product, quantity: 1 })));
 
     const addToCart = (product) => {
         setCart(currentCart => {
@@ -25,8 +25,22 @@ const Cart = () => {
     };
     
     const calculateTotal = () => {
-        return cart.reduce((total, product) => total + product.price * product.quantity, 0);
+        return cart.reduce((total, product) => {
+            if(product.checked){
+                return total + product.price * product.quantity;
+            }
+            return total;
+        }, 0);
     };
+
+    const handleChange = (productId) => {
+        setCart(currentCart => {
+            const index = currentCart.findIndex(item => item.id === productId);
+            const newCart = [...currentCart];
+            newCart[index] = {...newCart[index], checked: !newCart[index].checked};
+            return newCart
+        })
+    }
 
     return (
         <div className="container mx-auto">
@@ -43,14 +57,18 @@ const Cart = () => {
                     <p>{product.productDescription}</p>
                     <p>${product.price}</p>
                     <div>
-                    <button onClick={() => addToCart(product)}
+                    <label>
+                        <input type ="checkbox" checked={product.checked} onChange ={() =>handleChange(product.id)}/>
+                        -Add
+                    </label>
+                    {/*<button onClick={() => addToCart(product)}
                         className="bg-gray-300 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-2">
                         +</button>
                         <span className="text-lg">{product.quantity}</span>
                     <button 
                         onClick={() => removeFromCart(product.id)}
                         className="bg-gray-300 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded ml-2">
-                        -</button>
+            -</button>*/}
                     </div>
                     </div>
                 </div>
