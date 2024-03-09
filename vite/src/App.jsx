@@ -17,7 +17,8 @@ import Register from './pages/5.Training/Register';
 import About from './pages/6.About/About';
 import Login from './pages/7.Login/Login';
 import Cart from './pages/9.Cart/Cart';
-
+import Reset from './pages/7.Login/Reset';
+import Test from './pages/11.Test/Test';
 
 function App() {
 
@@ -35,13 +36,14 @@ function App() {
           <Route path='/services/service5' element={<Service5 />} />
           <Route path='/services/service6' element={<Service6 />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/reset' element={<Reset />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/training' element={<Training />} />
           <Route path='/training/coursecatalog' element={<CourseCatalog />} />
           <Route path='/training/register' element={<Register />} />
           <Route path='/about' element={<About />} />
           <Route path='/cart' element={<Cart />} />
-          
+          <Route path='/test' element={<Test />} />
           </Routes>
 
           <Footer/>

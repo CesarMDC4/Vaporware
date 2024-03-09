@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from 'firebase/auth';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyA-FXHwEXNgs-y5vbjBrC46w8qAB0QaniI",
@@ -18,6 +19,26 @@ const firebaseApp = initializeApp(firebaseConfig);
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const auth = getAuth(firebaseApp);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in
+        sessionStorage.setItem('userId', user.uid);
+        setIsLoggedIn(true);
+        // You can redirect the user to the desired page here
+      } else {
+        // User is signed out
+        sessionStorage.removeItem('userId');
+        setIsLoggedIn(false);
+      }
+    });
+
+    // Clean up the subscription on unmount
+    return unsubscribe;
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,10 +47,26 @@ export default function Login() {
       const auth = getAuth(firebaseApp);
       await signInWithEmailAndPassword(auth, email, password);
       console.log('Login successful');
+      setIsLoggedIn(true);
     } catch (error) {
       console.error('Login failed:', error.message);
+      setIsLoggedIn(false);
     }
   };
+
+  // Clears session when user leaves site
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      sessionStorage.removeItem('userId');
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -71,7 +108,7 @@ export default function Login() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="#" className="font-semibold hover:text-green-600">
+                  <a href="/reset" className="font-semibold hover:text-green-600">
                     Forgot password?
                   </a>
                 </div>
@@ -99,12 +136,7 @@ export default function Login() {
               </button>
             </div>
           </form>
-
           <p className="mt-10 text-center text-sm text-zinc-950">
-            Not a member?{' '}
-            <a href="#" className="font-extrabold leading-6 text-zinc-950 hover:text-green-500">
-              Start a 14 day free trial
-            </a>
           </p>
         </div>
       </div>

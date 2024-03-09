@@ -16,8 +16,8 @@ const About = () => {
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 6, // This will show 6 logos at a time
-        slidesToScroll: 6, // This will scroll 6 logos at a time
+        slidesToShow: 6,    // This will show 6 logos at a time
+        slidesToScroll: 6,  // This will scroll 6 logos at a time
         autoplay: true,
         speed: 500,
         autoplaySpeed: 3000,
@@ -288,7 +288,7 @@ const About = () => {
                   </Slider>
               </div>  
 
-              {/*Space Befor Video*/}
+              {/*Space Before Video*/}
               <div className="video-space" style={{ height: '50px' }}></div>
 
               {/* Video */}
@@ -302,11 +302,10 @@ const About = () => {
               </div>
 
           </div>
-          <div className="mb-12">
-              <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">THE TEAM</h1>
+          <div className="mb">
+              <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">THE CYPRESS TEAM</h1>
               <div className="w-3/4 mx-auto">
                   
-          
       <section id="team">
         <style>
           {`
