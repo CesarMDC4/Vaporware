@@ -9,7 +9,14 @@ const navigation = [
   { name: 'Training', href: '/training', current: false, dropdownItems:[{name: 'Course Catalog', href: '/Training/CourseCatalog'}, {name: 'Register', href: '/Training/Register'}] }, 
   { name: 'About Us', href: '/about', current: false },
   { name: 'Contact', href: '/contact', current: false },
-  { name: 'Login', href: '/login', current: false },  
+  {
+    name: 'Profile',
+    current: false,
+    dropdownItems: [
+      { name: 'Login', href: '/login' },
+      { name: 'Training History', href: '/test' }
+    ]
+  }
 ]
 
 function classNames(...classes) {

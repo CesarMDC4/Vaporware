@@ -1,6 +1,6 @@
 import express from 'express';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA-FXHwEXNgs-y5vbjBrC46w8qAB0QaniI",
@@ -16,9 +16,34 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 const app = express();
 
-const auth = getAuth();
+const auth = getAuth(firebaseApp);
 
 app.use(express.json());
+
+// Middleware to check if user is authenticated
+const isAuthenticated = async (req, res, next) => {
+  const user = await new Promise(resolve => {
+    onAuthStateChanged(auth, user => resolve(user));
+  });
+
+  if (user) {
+    next();
+  } else {
+    res.status(401).send({ message: 'Unauthorized' });
+  }
+};
+
+// Update test route to finalized history route 
+app.get('/test', (req, res) => {
+  // If user is logged in, allow access to the route
+  if (isLoggedIn) {
+    res.send('User test page');
+  } else {
+    // If user is not logged in, redirect to the login page
+    res.redirect('/login');
+  }
+});
+
 
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
