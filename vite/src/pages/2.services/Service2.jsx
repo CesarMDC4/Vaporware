@@ -32,9 +32,9 @@ const Service2 = () => {
   ]
   return (
     <div className="pt-4">
-      <div className="bg-gradient-to-t from-stone-300 via-zinc-300 to-white">
-        <div className="w-[80%] m-auto pt-11 ">
-          <p class="text-center text-xl font-bold pb-5">Building Cx & Energy Audits</p>
+      <div className="bg-gradient-to-t from-stone-300 via-zinc-300 to-white h-screen">
+        <div className="text-center m-auto pt-11 ">
+          <p class="text-xl font-bold pb-5">Building Cx & Energy Audits</p>
           <Gallery slides={slides}/>
         </div>
       </div>
