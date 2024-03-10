@@ -16,10 +16,11 @@ export default function Gallery({ slides }){
 
     const imgStyle = {
         height: "50vh",
+        display: "block",
     };
   
     return (
-        <div className="overflow-hidden relative" >
+        <div className="overflow-hidden relative"  >
             <div className="flex text-center flex-col inline-flex" >
                 <p class="font-bold pb-5">{slides[current].title}</p>
                 <p class="pb-5">{slides[current].description}</p>
