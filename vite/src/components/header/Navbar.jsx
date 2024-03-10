@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Services', href: '/services', current: false, dropdownItems:[{name: 'HVAC, Plumbing, & Fire Protection', href:'/services/service1'},{name: 'Building Cx& Energy Audits', href:'/services/service2'},{name: 'Industrial Refrigeration', href:'/services/service3'},{name: 'Enviromental Compliance', href:'/services/service4'},{name: 'Regulatory Compliance', href:'/services/service5'},{name: 'Training & Technical Support ', href:'/services/service6'}]},
+  { name: 'Services', href: '/services', current: false, dropdownItems:[{name: 'HVAC, Plumbing, & Fire Protection', href:'/services/service1'},{name: 'Building Cx & Energy Audits', href:'/services/service2'},{name: 'Industrial Refrigeration', href:'/services/service3'},{name: 'Enviromental Compliance', href:'/services/service4'},{name: 'Regulatory Compliance', href:'/services/service5'},{name: 'Training & Technical Support ', href:'/services/service6'}]},
   { name: 'Training', href: '/training', current: false, dropdownItems:[{name: 'Course Catalog', href: '/Training/CourseCatalog'}, {name: 'Register', href: '/Training/Register'}] }, 
   { name: 'About Us', href: '/about', current: false },
   { name: 'Contact', href: '/contact', current: false },
@@ -87,7 +87,7 @@ export default function Example() {
                                       index < item.dropdownItems.length-1 && 'border-b border-black rounded-b-none '
                                     )}
                                   >
-                                    {dropdownItem.name}
+                                    <div className="w-44 text-center hover:text-gray-600">{dropdownItem.name}</div>
                                   </a>
                                   </>
                                 )}
