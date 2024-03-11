@@ -10,6 +10,24 @@ const globalStyles = `
     }
 `;
 
+const memberInfoStyleCentered = {
+  opacity: 0,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'absolute',
+  borderRadius: '50%',
+  width: '100%',
+  height: '100%',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  transition: '0.2s',
+  color: 'white',
+};
+
+
 const About = () => {
 
 
@@ -276,6 +294,8 @@ const About = () => {
               </header>
           </div>
 
+          
+
           <div className="mb-12">
               <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">OUR CLIENTS</h1>
               <div className="w-3/4 mx-auto">
@@ -286,7 +306,7 @@ const About = () => {
                       </div>
                       ))}
                   </Slider>
-              </div>  
+              </div>
 
               {/*Space Before Video*/}
               <div className="video-space" style={{ height: '50px' }}></div>
@@ -320,10 +340,9 @@ const About = () => {
                 max-width: 25%;
               }
             }
-            #team .centered {
-              display: inline-block;
-              margin-left: auto;
-              margin-right: auto;
+            #team  {
+              display: flex;
+              justify-content: center;
             }
           `}
         </style>
@@ -346,11 +365,11 @@ const About = () => {
               width: 100%;
               height: 100%;
               top: 0;
-              left: 0;
-              right: 0;
+              left: auto;
+              right: auto;
               bottom: 0;
               transition: 0.2s;
-              color: white; 
+              color: white;
             }
             .img-fluid {
               max-width: 100%;
@@ -373,6 +392,7 @@ const About = () => {
             img {
               vertical-align: middle;
               border-style: none;
+              margin:0 auto 0 auto;
               }
             /* Adding the provided styles for columns */
             .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, 
@@ -388,7 +408,7 @@ const About = () => {
               padding-right: 15px;
               padding-left: 15px;
             }
-            /* style for the facts portion of the site */ 
+            /* style for the facts portion of the site */
             .horizontal-info {
                   display: flex;
                   justify-content: space-between;

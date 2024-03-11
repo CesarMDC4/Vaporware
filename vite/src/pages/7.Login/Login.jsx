@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
 
 
 const firebaseConfig = {
@@ -20,6 +20,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [acceptCookies, setAcceptCookies] = useState(false);
 
   useEffect(() => {
     const auth = getAuth(firebaseApp);
@@ -28,6 +29,10 @@ export default function Login() {
         // User is signed in
         sessionStorage.setItem('userId', user.uid);
         setIsLoggedIn(true);
+
+        if(!acceptCookies){
+          return;
+        }
         // You can redirect the user to the desired page here
       } else {
         // User is signed out
@@ -38,7 +43,15 @@ export default function Login() {
 
     // Clean up the subscription on unmount
     return unsubscribe;
-  }, []);
+  }, [acceptCookies]);
+
+  const handleAcceptCookies = () => {
+    setAcceptCookies(true);
+    // Here can save the user's selections to the server or use other logic
+  };
+  const handleDeclineCookies = () =>{
+    setAcceptCookies(true);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,9 +80,22 @@ export default function Login() {
     };
   }, []);
 
+  if (!acceptCookies) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-center">
+          <p>We use cookies to provide better services, do you agree to the use of cookies?</p>
+          <button onClick={handleAcceptCookies} className="mr-2">Agree</button>
+          <button onClick={handleDeclineCookies}>Reject</button>
+        </div>
+      </div>
+    );
+  }
+
 
   return (
     <div className="flex flex-col min-h-screen">
+
       <div className="flex-1 bg-gradient-to-t from-stone-300 via-zinc-300 to-white flex flex-col justify-center items-center">
         <div className="sm:w-full sm:max-w-sm px-6 py-12 lg:px-8">
           <img
