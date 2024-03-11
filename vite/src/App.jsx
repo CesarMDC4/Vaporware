@@ -19,11 +19,13 @@ import Login from './pages/7.Login/Login';
 import Cart from './pages/9.Cart/Cart';
 import Reset from './pages/7.Login/Reset';
 import Test from './pages/11.Test/Test';
+import { CatalogContextProvider } from './context/catalog-context';
 
 function App() {
 
   return (
     <div>
+      <CatalogContextProvider>
       <Router>
           <Navbar />
           <Routes>
@@ -50,6 +52,7 @@ function App() {
 
 
       </Router>
+      </CatalogContextProvider>
     </div>
   )
 }

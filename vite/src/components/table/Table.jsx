@@ -18,7 +18,7 @@ const Table = ({ data }) => {
                 </thead>
                 <tbody>
                     {data.map((row, index) => (
-                        <tr>
+                        <tr key={index}>
                             <td className="table-cell">{row.column1}</td>
                             <td className="table-cell">{row.column2}</td>
                             <td className="table-cell">{row.column3}</td>
