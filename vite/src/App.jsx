@@ -1,5 +1,6 @@
-import { BrowserRouter as Router,Routes,Route  } from 'react-router-dom';
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 import Navbar from "./components/header/Navbar";
 import Home from "./pages/1.home/Home";
 import Services from './pages/2.services/Services';
@@ -20,38 +21,47 @@ import Cart from './pages/9.Cart/Cart';
 import Reset from './pages/7.Login/Reset';
 import Test from './pages/11.Test/Test';
 import { CatalogContextProvider } from './context/catalog-context';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('userId');
+    setIsAuthenticated(!!isLoggedIn);
+  }, []);
 
   return (
     <div>
       <CatalogContextProvider>
-      <Router>
+        <Router>
           <Navbar />
           <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/services/service1' element={<Service1 />} />
-          <Route path='/services/service2' element={<Service2 />} />
-          <Route path='/services/service3' element={<Service3 />} />
-          <Route path='/services/service4' element={<Service4 />} />
-          <Route path='/services/service5' element={<Service5 />} />
-          <Route path='/services/service6' element={<Service6 />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/reset' element={<Reset />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/training' element={<Training />} />
-          <Route path='/training/coursecatalog' element={<CourseCatalog />} />
-          <Route path='/training/register' element={<Register />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/test' element={<Test />} />
+            <Route exact path='/' element={<Home />} />
+            <Route path='/services' element={<Services />} />
+            <Route path='/services/service1' element={<Service1 />} />
+            <Route path='/services/service2' element={<Service2 />} />
+            <Route path='/services/service3' element={<Service3 />} />
+            <Route path='/services/service4' element={<Service4 />} />
+            <Route path='/services/service5' element={<Service5 />} />
+            <Route path='/services/service6' element={<Service6 />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/reset' element={<Reset />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/training' element={<Training />} />
+            <Route path='/training/coursecatalog' element={<CourseCatalog />} />
+            <Route path='/training/register' element={<Register />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/test' element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Test />
+              </ProtectedRoute>
+            } />
           </Routes>
 
-          <Footer/>
-
-
-      </Router>
+          <Footer />
+        </Router>
       </CatalogContextProvider>
     </div>
   )

@@ -34,26 +34,16 @@ const isAuthenticated = async (req, res, next) => {
   }
 };
 
-// Update test route to finalized history route 
-app.get('/test', (req, res) => {
-  // If user is logged in, allow access to the route
-  if (isLoggedIn) {
-    res.send('User test page');
-  } else {
-    // If user is not logged in, redirect to the login page
-    res.redirect('/login');
-  }
-});
-
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    res.send({ message: 'Login successful' });
+    res.send({ message: 'Login successful', redirect: '/test' }); // Include redirect URL
   } catch (error) {
     res.status(401).send({ message: 'Login failed', error: error.message });
   }
 });
+
 
 admin.initializeApp({
     credential: admin.credential.applicationDefault(),
