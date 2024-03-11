@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { control, handleSubmit, formState: { errors } } = useForm({
@@ -16,15 +17,32 @@ const Contact = () => {
   const handleCaptchaChange = (token) => {
     setCaptchaToken(token);
   };
+  
 
   const onSubmit = (data) => {
+    console.log('Form submitted:', data);
     if (captchaToken) {
       console.log('Form data:', data);
       console.log('Captcha token:', captchaToken);
-      // Proceed with form submission
-    } else {
+    
+      const emailTemplateParams = {
+        user_name: data.name,
+        user_email: data.email,
+        message: data.message
+      };
+
+
+      emailjs.send('service_74v5vru', 'template_aypxsno', emailTemplateParams, 'tqodn-sEbgpAYqu5M')
+        .then((result) => {
+          console.log('email sent successfully:', result.text);
+        })
+        .catch((error) => {
+          console.error('error sending email', error.text);
+        });
+    } 
+    else {
       alert('Please complete the reCAPTCHA verification.');
-    }
+    } 
   };
 
   return (
@@ -34,32 +52,32 @@ const Contact = () => {
         <h1 className="text-center font-bold text-4xl mt-4 mb-12 font-sans">Contact Us</h1>
       </div>
 
-      <div class="max-w-screen-xl mx-auto justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-0">
-        <div class="max-w-sm bg-transparent">
+      <div className="max-w-screen-xl mx-auto justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-0">
+        <div className="max-w-sm bg-transparent">
           <ion-icon name="location-outline"></ion-icon>
           <div class="p-5 bg-transparent">
             <a href="#">
-              <h2 class="mb-4 text-m tracking-tight text-black text-center">Address</h2>
+              <h2 className="mb-4 text-m tracking-tight text-black text-center">Address</h2>
             </a>
-            <p class="mt-4 list-disc pl-5 text-black underline text-center">8 Harris Court Suite A8, Monterey, CA 93940, USA</p>
+            <p className="mt-4 list-disc pl-5 text-black underline text-center">8 Harris Court Suite A8, Monterey, CA 93940, USA</p>
           </div>
         </div>
-        <div class="max-w-sm bg-transparent">
+        <div className="max-w-sm bg-transparent">
           <ion-icon name="call-outline"></ion-icon>
-          <div class="p-5 bg-transparent">
+          <div className="p-5 bg-transparent">
             <a href="#">
-              <h2 class="mb-4 text-m tracking-tight text-black text-center">Phone Number</h2>
+              <h2 className="mb-4 text-m tracking-tight text-black text-center">Phone Number</h2>
             </a>
-            <p class="mt-4 list-disc pl-5 text-black underline text-center">+1 831.218.1802</p>
+            <p className="mt-4 list-disc pl-5 text-black underline text-center">+1 831.218.1802</p>
           </div>
         </div>
-        <div class="max-w-sm bg-transparent">
+        <div className="max-w-sm bg-transparent">
           <ion-icon name="mail-outline"></ion-icon>
-          <div class="p-5 bg-transparent">
+          <div className="p-5 bg-transparent">
             <a href="#">
-              <h2 class="mb-4 text-m tracking-tight text-black text-center">Email</h2>
+              <h2 className="mb-4 text-m tracking-tight text-black text-center">Email</h2>
             </a>
-            <p class="mt-4 list-disc pl-5 text-black underline text-center">info@cypresseg.com</p>
+            <p className="mt-4 list-disc pl-5 text-black underline text-center">info@cypresseg.com</p>
           </div>
         </div>
       </div>
