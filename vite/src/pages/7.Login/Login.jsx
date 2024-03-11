@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA-FXHwEXNgs-y5vbjBrC46w8qAB0QaniI",
@@ -15,12 +15,13 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 
-// This function needs further development, where will we redirect once a user is logged in? 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [acceptCookies, setAcceptCookies] = useState(false);
+  const [renderPrompt, setRenderPrompt] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const auth = getAuth(firebaseApp);
@@ -29,11 +30,6 @@ export default function Login() {
         // User is signed in
         sessionStorage.setItem('userId', user.uid);
         setIsLoggedIn(true);
-
-        if(!acceptCookies){
-          return;
-        }
-        // You can redirect the user to the desired page here
       } else {
         // User is signed out
         sessionStorage.removeItem('userId');
@@ -43,30 +39,42 @@ export default function Login() {
 
     // Clean up the subscription on unmount
     return unsubscribe;
-  }, [acceptCookies]);
+  }, []);
 
   const handleAcceptCookies = () => {
     setAcceptCookies(true);
-    // Here can save the user's selections to the server or use other logic
+    localStorage.setItem('cookiesAccepted', 'true'); 
+    setRenderPrompt(false);
   };
-  const handleDeclineCookies = () =>{
-    setAcceptCookies(true);
-  }
 
+  const handleDeclineCookies = () => {
+    setAcceptCookies(false);
+    localStorage.setItem('cookiesAccepted', 'false'); 
+    setRenderPrompt(false);
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const auth = getAuth(firebaseApp);
-      await signInWithEmailAndPassword(auth, email, password);
+      const response = await signInWithEmailAndPassword(auth, email, password);
       console.log('Login successful');
+      localStorage.setItem('userId', response.user.uid); // Store user's authentication state in local storage
       setIsLoggedIn(true);
+      
+      // Check if the server sent a redirect URL
+      if (response && response.redirect) {
+        navigate(response.redirect); // Redirect to the specified URL
+      } else {
+        navigate('/test'); // Default redirect to /test if no redirect URL is provided
+      }
     } catch (error) {
       console.error('Login failed:', error.message);
       setIsLoggedIn(false);
     }
   };
-
+  
   // Clears session when user leaves site
   useEffect(() => {
     const handleBeforeUnload = () => {
@@ -80,22 +88,8 @@ export default function Login() {
     };
   }, []);
 
-  if (!acceptCookies) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="text-center">
-          <p>We use cookies to provide better services, do you agree to the use of cookies?</p>
-          <button onClick={handleAcceptCookies} className="mr-2">Agree</button>
-          <button onClick={handleDeclineCookies}>Reject</button>
-        </div>
-      </div>
-    );
-  }
-
-
   return (
     <div className="flex flex-col min-h-screen">
-
       <div className="flex-1 bg-gradient-to-t from-stone-300 via-zinc-300 to-white flex flex-col justify-center items-center">
         <div className="sm:w-full sm:max-w-sm px-6 py-12 lg:px-8">
           <img
@@ -107,7 +101,7 @@ export default function Login() {
             Sign in to your account
           </h2>
         </div>
-
+  
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
@@ -127,7 +121,7 @@ export default function Login() {
                 />
               </div>
             </div>
-
+  
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-zinc-950">
@@ -152,7 +146,7 @@ export default function Login() {
                 />
               </div>
             </div>
-
+  
             <div>
               <button
                 type="submit"
@@ -162,10 +156,30 @@ export default function Login() {
               </button>
             </div>
           </form>
-          <p className="mt-10 text-center text-sm text-zinc-950">
-          </p>
+          <p className="mt-10 text-center text-sm text-zinc-950"></p>
         </div>
       </div>
+  
+      {/* Cookie Acceptance Buttons */}
+      {renderPrompt && !acceptCookies && (
+        <div className="flex justify-center mt-0 p-3 bg-gray-200 rounded-md text-sm">
+          <p>We use cookies to provide better services, do you agree to the use of cookies?</p>
+          <div className="flex justify-center mt-0">
+            <button
+              onClick={() => { handleAcceptCookies(); setIsLoggedIn(false); }}
+              className="mr-1 px-3 py-1 bg-green-500 text-white rounded-md"
+            >
+              Agree
+            </button>
+            <button
+              onClick={() => { handleDeclineCookies(); setIsLoggedIn(false); }}
+              className="ml-1 px-3 py-1 bg-red-500 text-white rounded-md"
+            >
+              Reject
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
