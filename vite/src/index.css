@@ -44,45 +44,20 @@ ion-icon {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
 }
-
-
-
 
 .product {
     border-radius: 15px;
-    max-width: 400px;
+    width: 400px;
     height: 350px;
-    width: calc(50% - 20px);
-    margin: 10px;
-    box-sizing: border-box;
+    margin: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0;
 }
 
-
-/* Takes care of different screens sizes */
-@media screen and (max-width: 800px) {
-
-
-    .products {
-        justify-content: flex-start;
-    }
-
-
-    .product {
-        width: calc(50% - 20px);
-        margin: 10px;
-    }
-}
-
-
-.description {
+.product .description {
     text-align: center;
 }
 
