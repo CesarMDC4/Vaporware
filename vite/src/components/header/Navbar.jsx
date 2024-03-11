@@ -83,6 +83,7 @@ export default function Example() {
                                     href={dropdownItem.href}
                                     className={classNames(
                                       active ? 'text-black-900' : 'text-black-500',
+                                      'hover:bg-green-100',
                                       'block px-6 py-2 text-sm rounded-md',
                                       index < item.dropdownItems.length-1 && 'border-b border-black rounded-b-none '
                                     )}
