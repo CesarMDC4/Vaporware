@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '/src/components/card/Card.jsx';
 import Table from '/src/components/table/table.jsx';
 import { Products } from '/src/pages/8.Products/products';
 import { Product } from '/src/pages/8.Products/product.jsx';
 import '/src/index.css';
+import Cart from '/src/pages/9.Cart/Cart.jsx'
 
 const CourseCatalog = () => {
+
   const tableData = [
     { column1: 'CEG-TR-101', column2: 'Mon, Feb. 5', column3: 'CalARP/RMP/PSM/CERS/Tier II Regulatory Compliance'},
     { column1: 'CEG-TR-201', column2: 'Tue, Feb. 6', column3: 'Basic Industrial Ammonia Refrigeration (RETA IR Book 1)'},
@@ -22,7 +24,7 @@ const CourseCatalog = () => {
           </div>
           <div className='products'>
             {Products.map((product) => ( 
-              <Product data={product} />
+              <Product key={product.id} data={product} />
             ))}
           </div>
 
@@ -58,7 +60,6 @@ const CourseCatalog = () => {
             </a>
           </div>
           </div>
-
         </div>
       
     )
