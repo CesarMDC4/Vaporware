@@ -13,13 +13,18 @@ export default function Gallery({ slides }){
       if (current === slides.length - 1) setCurrent(0);
       else setCurrent(current + 1);
     };
+
+    const imgStyle = {
+        height: "50vh",
+        display: "block",
+    };
   
     return (
-        <div className="overflow-hidden relative ">
-            <div className=" flex text-center flex-col inline-flex w-full">
+        <div className="overflow-hidden relative"  >
+            <div className="flex text-center flex-col inline-flex" >
                 <p class="font-bold pb-5">{slides[current].title}</p>
                 <p class="pb-5">{slides[current].description}</p>
-                <img src={slides[current].image}/>
+                <img src={slides[current].image} style = {imgStyle} className="w-auto object-contain"/>
             </div>
 
             <div className="absolute top-0 h-full w-full justify-between items-center flex px-10">
