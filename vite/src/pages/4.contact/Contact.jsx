@@ -41,7 +41,7 @@ const Contact = () => {
     }
     else {
       alert('Please complete the reCAPTCHA verification.');
-    }
+    } 
   };
 
   return (
@@ -141,8 +141,6 @@ const Contact = () => {
                     </div>
                   )}
                 />
-
-                <div className="p-5"><input type="file" name="file upload" /></div>
 
                 {/* Google reCAPTCHA */}
                 <div className="p-5">
