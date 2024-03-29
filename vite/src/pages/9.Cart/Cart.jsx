@@ -7,10 +7,12 @@ import { CartItem } from "/src/pages/9.Cart/cart-item.jsx";
 
 
 const Cart = () => {
+    const [cart, setCart] = useState(Products.map(product => ({ ...product, quantity: 1 })));
     const { cartItems, getTotalCartAmount } = useContext(CatalogContext);
     const totalAmount = getTotalCartAmount();
-
-    // const addToCart = (product) => {
+    
+    
+     // const addToCart = (product) => {
     //     setCart(currentCart => {
     //         const updatedCart = currentCart.map(item => {
     //             if (item.id === product.id) {
@@ -60,9 +62,28 @@ const Cart = () => {
     //     })
     // }
 
+
+    const handleRegister = () => {
+        // Construct prefilled Google form URLs based on checkbox state
+        const checkedProducts = cart.filter(product => product.checked);
+        const queryParams = checkedProducts.map(product => `entry.1851047480=${(product.productName.replace(/ /g, '+'))}+-+$${product.price}`).join('&');
+        const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLScmhWg3VhS-WoDCA0bGS9-1Qmmhs45N9_G-TQyel19KKIcJMw/viewform?usp=pp_url&${queryParams}`;
+        //console.log('queryParams');
+        // Open the constructed form URL in a new tab
+        window.open(formUrl, '_blank');
+    };
+
     return (
         <div className="container mx-auto">
             <h1 className="text-4xl font-bold text-center pt-4 pb-4">Shopping Cart</h1>
+            {/* Register button */}
+            <div className="flex justify-end w-full">
+                <button
+                    onClick={handleRegister}
+                    className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Register
+                </button>
+            </div>
             {Products.map((cartItems) => {
                 if (cartItems[cartItems.uid] !== 0) {
                     return <CartItem key={cartItems.uid} data={cartItems} addedToCart={cartItems.quantity > 0} />;

@@ -83,6 +83,7 @@ export default function Example() {
                                     href={dropdownItem.href}
                                     className={classNames(
                                       active ? 'text-black-900' : 'text-black-500',
+                                      'hover:bg-green-100',
                                       'block px-6 py-2 text-sm rounded-md',
                                       index < item.dropdownItems.length-1 && 'border-b border-black rounded-b-none '
                                     )}
@@ -139,14 +140,17 @@ export default function Example() {
                       </div>
                       {/*Mobile Menu Dropdown items*/}
                       <Menu.Items className="absolute z-10 right-0 mt-2 space-y-2 bg-white border border-gray-200 p-2 rounded-md">
-                        {item.dropdownItems.map((dropdownItem) => (
+                        {item.dropdownItems.map((dropdownItem, index) => (
                           <Menu.Item key = {dropdownItem.name}>
                             {({active}) => (
                               <a
                                 href={dropdownItem.href}
                                 className = {classNames(
-                                  active ? 'text-black-900' : 'text-black-500',
-                                  'block px-4 py-2 text-sm rounded-md'
+
+                                  'block px-4 py-2 text-sm rounded-md',
+                                  active ? 'text-black-900' : 'text-gray-500',
+                                  'hover:bg-green-100',
+                                  index !== 0? 'border-t border-gray-200' : null
                                 )}
                               >
                                 {dropdownItem.name}
