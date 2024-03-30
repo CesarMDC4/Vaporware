@@ -103,7 +103,7 @@ app.post('/trainingregistration', async (req, res) => {  // eg. http://localhost
         
         // Add the registration data to Firestore
         const registrationRef = await db.collection('registrations_February_5-8_2024').add(registrationData);
-        res.status(200).send(`Registration added with ID: ${registrationRef.id}`);
+        res.status(200).json({ id: registrationRef.id }); // send ID back as a JSON object (This ID is our invoice number)
     } catch (error) {
         res.status(500).send('Error adding registration: ' + error.message);
     }
