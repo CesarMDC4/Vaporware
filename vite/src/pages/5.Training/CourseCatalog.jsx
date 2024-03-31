@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import Card from '/src/components/card/Card.jsx';
 import Table from '/src/components/table/table.jsx';
 import { Products } from '/src/pages/8.Products/products';
 import { Product } from '/src/pages/8.Products/product.jsx';
 import '/src/index.css';
-import Cart from '/src/pages/9.Cart/Cart.jsx'
 
 const CourseCatalog = () => {
 
