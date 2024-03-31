@@ -9,9 +9,7 @@ const Home = () => {
           <p class="pb-5">Ammonia Refrigeration, Regulatory Compliance, and HAZWOPER Training</p>
           <p class="pb-5">In-person and online options available.</p>
           <p class="pb-5">Click below to go to our new training registration page for more info and to register.</p>
-          <a href = "http://localhost:5173/Training/Register" class="bg-green-900 text-white hover:bg-white hover:text-green-500 font-bold py-2 px-3 rounded-full mb-5">
-            Register Now!
-          </a>
+          
 
           <div className="flex justify-center items-center mb-4"> 
             <img src="/src/assets/img/logo/CypressEG.png" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
