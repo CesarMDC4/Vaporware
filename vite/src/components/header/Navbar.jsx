@@ -1,6 +1,6 @@
-import { Disclosure, Menu } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
-import { Fragment } from 'react'
+import { Disclosure, Menu } from '@headlessui/react';
+import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -34,11 +34,7 @@ export default function Example() {
               {/* Left section for logo */}
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <a href="/" className="flex flex-shrink-0 items-center">
-                  <img
-                    className="block h-14 w-auto"
-                    src="https://www.cypresseg.com/img/logo/CypressEG.png"
-                    alt="Cypress"
-                  />
+                <img src="/src/assets/img/logo/CypressEG.svg" alt="Logo" className="mb-4 object-scale-down max-h-14"/>
                 </a>
               </div>
 
