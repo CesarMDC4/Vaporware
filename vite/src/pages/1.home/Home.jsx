@@ -9,12 +9,10 @@ const Home = () => {
           <p class="pb-5">Ammonia Refrigeration, Regulatory Compliance, and HAZWOPER Training</p>
           <p class="pb-5">In-person and online options available.</p>
           <p class="pb-5">Click below to go to our new training registration page for more info and to register.</p>
-          <a href = "http://localhost:5173/Training/Register" class="bg-green-900 text-white hover:bg-white hover:text-green-500 font-bold py-2 px-3 rounded-full mb-5">
-            Register Now!
-          </a>
+          
 
           <div className="flex justify-center items-center mb-4"> 
-            <img src="/src/assets/img/logo/CypressEG.png" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
+            <img src="/src/assets/img/logo/CypressEG.svg" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
           </div>
 
           {/* Space between header and service cards */}
@@ -49,7 +47,7 @@ const Home = () => {
           <div className="max-w-sm bg-white shadow-md rounded-lg pt-4">
             <div className="p-5 bg-transparent" style={{ marginBottom: "+20px" }}>
               <div className="flex justify-center items-center mb-4"> 
-                <img src="/src/assets/img/logo/CypressEG.png" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
+                <img src="/src/assets/img/logo/CypressEG.svg" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
               </div>
               <a href='/about' className="block">
                 <h2 className="mb-4 text-lg tracking-tight text-black text-center hover:text-blue-600">Cypress Engineering Group</h2>

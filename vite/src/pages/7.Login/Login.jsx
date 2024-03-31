@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,6 +21,7 @@ export default function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [acceptCookies, setAcceptCookies] = useState(false);
   const [renderPrompt, setRenderPrompt] = useState(true);
+  const [userEmail, setUserEmail] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,10 +31,12 @@ export default function Login() {
         // User is signed in
         sessionStorage.setItem('userId', user.uid);
         setIsLoggedIn(true);
+        setUserEmail(user.email);
       } else {
         // User is signed out
         sessionStorage.removeItem('userId');
         setIsLoggedIn(false);
+        setUserEmail('');
       }
     });
 
@@ -62,6 +65,7 @@ export default function Login() {
       console.log('Login successful');
       localStorage.setItem('userId', response.user.uid); // Store user's authentication state in local storage
       setIsLoggedIn(true);
+      setUserEmail(response.user.email);
       
       // Check if the server sent a redirect URL
       if (response && response.redirect) {
@@ -75,6 +79,14 @@ export default function Login() {
     }
   };
   
+  const handleLogout = async () => {
+    const auth = getAuth(firebaseApp);
+    await signOut(auth);
+    setIsLoggedIn(false);
+    setUserEmail('');
+    navigate('/login');
+  };
+
   // Clears session when user leaves site
   useEffect(() => {
     const handleBeforeUnload = () => {
@@ -92,6 +104,12 @@ export default function Login() {
     <div className="flex flex-col min-h-screen">
       <div className="flex-1 bg-gradient-to-t from-stone-300 via-zinc-300 to-white flex flex-col justify-center items-center">
         <div className="sm:w-full sm:max-w-sm px-6 py-12 lg:px-8">
+          {isLoggedIn && (
+            <div className="flex justify-end items-center mb-4">
+              <p className="mr-2 text-md text-black-600">{`Logged in as ${userEmail}`}</p>
+              <button onClick={handleLogout} className="text-md text-blue-500 cursor-pointer">Logout</button>
+            </div>
+          )}
           <img
             className="mx-auto h-10 w-auto"
             src="https://www.cypresseg.com/img/logo/CypressEG.png"
@@ -166,13 +184,13 @@ export default function Login() {
           <p>We use cookies to provide better services, do you agree to the use of cookies?</p>
           <div className="flex justify-center mt-0">
             <button
-              onClick={() => { handleAcceptCookies(); setIsLoggedIn(false); }}
+              onClick={() => { handleAcceptCookies();}}
               className="mr-1 px-3 py-1 bg-green-500 text-white rounded-md"
             >
               Agree
             </button>
             <button
-              onClick={() => { handleDeclineCookies(); setIsLoggedIn(false); }}
+              onClick={() => { handleDeclineCookies();}}
               className="ml-1 px-3 py-1 bg-red-500 text-white rounded-md"
             >
               Reject

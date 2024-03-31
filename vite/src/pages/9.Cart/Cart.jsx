@@ -65,11 +65,37 @@ const Cart = () => {
 
     const handleRegister = () => {
         // Construct prefilled Google form URLs based on checkbox state
-        const checkedProducts = cart.filter(product => product.checked);
-        const queryParams = checkedProducts.map(product => `entry.1851047480=${(product.productName.replace(/ /g, '+'))}+-+$${product.price}`).join('&');
+              
+                //const checkedProducts = Products.filter(product => product.uid && cartItems > 0);
+                //const queryParams = checkedProducts.map(product => `entry.1851047480=${(product.productName.replace(/ /g, '+'))}+-+$${product.price}`).join('&');
+                
+               //console.log("Checked Products:", checkedProducts);
+               //console.log("Query Params:", queryParams);
+        
+        // Filter out cart items with quantity greater than 0
+        const selectedItems = Object.entries(cartItems)
+        .filter(([itemId, quantity]) => quantity > 0)
+        .map(([itemId, quantity]) => {
+            const itemInfo = Products.find(product => product.uid === Number(itemId));
+            const queryParams = `entry.1851047480=${(itemInfo.productName.replace(/ /g, '+'))}+-+$${itemInfo.price}`;
+            //console.log("Query Params:", queryParams);
+            return queryParams;
+        });
+
+        console.log("Selected Items:", selectedItems);
+
+        // Join the selected items' query parameters
+        const queryParams = selectedItems.join('&');
+        console.log("Query Params:", queryParams);
+
+        //const checkedProducts = cart.filter(product => product.quantity > 0);
+        //const queryParams = checkedProducts.map(product => `entry.1851047480=${(product.productName.replace(/ /g, '+'))}+-+$${product.price}`).join('&');
+        //console.log("I'm a test " + cart.filter(product => product.productName).map(product => product.addedToCart));
+        
         const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLScmhWg3VhS-WoDCA0bGS9-1Qmmhs45N9_G-TQyel19KKIcJMw/viewform?usp=pp_url&${queryParams}`;
         //console.log('queryParams');
         // Open the constructed form URL in a new tab
+        //console.log(formUrl);
         window.open(formUrl, '_blank');
     };
 

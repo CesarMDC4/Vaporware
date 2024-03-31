@@ -21,18 +21,18 @@ export default function Gallery({ slides }){
   
     return (
         <div className="overflow-hidden relative"  >
-            <div className="flex text-center flex-col inline-flex" >
+            <div id="CurrSlide" className="flex text-center flex-col inline-flex" >
                 <p class="font-bold pb-5">{slides[current].title}</p>
                 <p class="pb-5">{slides[current].description}</p>
                 <img src={slides[current].image} style = {imgStyle} className="w-auto object-contain"/>
             </div>
 
             <div className="absolute top-0 h-full w-full justify-between items-center flex px-10">
-                <button onClick={previousSlide}>
+                <button name="left" onClick={previousSlide}>
                     <ArrowLeftCircleIcon className="h-10 w-10 text-gray-400 hover:text-black" aria-hidden="true" />
                 </button>
             
-                <button onClick={nextSlide}>
+                <button name="right" onClick={nextSlide}>
                     <ArrowRightCircleIcon className="h-10 w-10 text-gray-400 hover:text-black" aria-hidden="true" />
                 </button>
             </div>
