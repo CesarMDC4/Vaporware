@@ -8,6 +8,7 @@ const Contact = () => {
     defaultValues: {
       name: '',
       email: '',
+      phone: '',
       message: '',
     },
   });
@@ -27,6 +28,7 @@ const Contact = () => {
       const emailTemplateParams = {
         user_name: data.name,
         user_email: data.email,
+        user_phone: data.phone,
         message: data.message
       };
 
@@ -110,7 +112,7 @@ const Contact = () => {
                 <Controller
                   name="email"
                   control={control}
-                  rules={{ required: true }}
+                  rules={{ required: true, pattern: /^\S+@\S+$/i }}
                   render={({ field }) => (
                     <div className="p-5 bg-transparent">
                       <span className="mb-4 text-m tracking-tight text-black text-center font-semibold">Email</span>
@@ -121,6 +123,24 @@ const Contact = () => {
                         className={`block w-full p-3 border rounded ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
                       />
                       {errors.email && <span className="text-red-500">Please enter a valid email</span>}
+                    </div>
+                  )}
+                />
+
+                <Controller
+                  name="phone"
+                  control={control}
+                  rules={{ required: true, pattern: /^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{3}$/ }}
+                  render={({ field }) => (
+                    <div className="p-5 bg-transparent">
+                      <span className="mb-4 text-m tracking-tight text-black text-center font-semibold">Phone Number</span>
+                      <input
+                        type="tel"
+                        placeholder="enter phone number here..."
+                        {...field}
+                        className={`block w-full p-3 border rounded ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                      />
+                      {errors.phone && <span className="text-red-500">Please enter a valid phone number</span>}
                     </div>
                   )}
                 />
