@@ -4,7 +4,7 @@ describe('Navbar', () => {
     })
   
     it('displays the logo correctly', () => {
-      cy.get('img').should('have.attr', 'src', 'https://www.cypresseg.com/img/logo/CypressEG.png')
+      cy.get('img').should('have.attr', 'src', '/src/assets/img/logo/CypressEG.svg')
     })
   
     it('navigates to different pages on clicking navigation links', () => {
@@ -32,21 +32,21 @@ describe('Navbar', () => {
     // Test dropdown menus
     it('displays dropdown menus properly', () => {
       cy.get('nav').contains('Services').click()
-      cy.get('a[href="http://localhost:5173/services/service1"]').should('exist')
-      cy.get('a[href="http://localhost:5173/services/service2"]').should('exist')
+      cy.get('a[href="/services/service1"]').should('exist')
+      cy.get('a[href="/services/service2"]').should('exist')
       // Test other dropdown items as well
     })
   
     it('navigates to correct pages from dropdown menus', () => {
       cy.get('nav').contains('Services').click()
-      cy.get('a[href="http://localhost:5173/services/service1"]').click()
-      cy.url().should('include', 'http://localhost:5173/services/service1')
+      cy.get('a[href="/services/service2"]').click({multiple: false})
+      cy.url().should('include', 'http://localhost:5173/services/service2')
 
     })
   
     // Test shopping cart icon
     it('navigates to cart page when shopping cart icon is clicked', () => {
-      cy.get('nav').find('a[href="http://localhost:5173/cart"]').click()
+      cy.get('nav').find('a[href="/cart"]').click()
       cy.url().should('include', 'http://localhost:5173/cart')
     })
   })
