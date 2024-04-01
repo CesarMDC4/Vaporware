@@ -130,7 +130,7 @@ const Contact = () => {
                 <Controller
                   name="phone"
                   control={control}
-                  rules={{ required: true, pattern: /^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{3}$/ }}
+                  rules={{ required: true, pattern: /^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/ }}
                   render={({ field }) => (
                     <div className="p-5 bg-transparent">
                       <span className="mb-4 text-m tracking-tight text-black text-center font-semibold">Phone Number</span>
