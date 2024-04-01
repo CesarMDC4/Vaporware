@@ -1,0 +1,28 @@
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-header, .table-cell, .table-header-bg {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.combined-cell {
+    padding: 8px;
+    border-right: 1px solid #000000;
+
+}
+
+.table-header-bg {
+    background-color: #d8f4f7;
+}
+
+.last-cell {
+    border-top: 1px solid #000;
+}
