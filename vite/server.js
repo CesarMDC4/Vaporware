@@ -63,6 +63,7 @@ app.post('/tregserver', async (req, res) => {  // eg. http://localhost:3000/treg
     try {
         // Destructure the received data
         const {
+            uid,
             firstName,
             lastName,
             email,
@@ -70,9 +71,13 @@ app.post('/tregserver', async (req, res) => {  // eg. http://localhost:3000/treg
             title,
             phoneNumber,
             attendDay1,
+            day1Date,
             attendDay2,
+            day2Date,
             attendDay3,
+            day3Date,
             attendDay4,
+            day4Date,
             paymentMethod,
             invoicePerson,
             invoiceEmail,
@@ -89,6 +94,7 @@ app.post('/tregserver', async (req, res) => {  // eg. http://localhost:3000/treg
         
         // Prepare the registration data for Firestore
         const registrationData = {
+            uid,
             firstName,
             lastName,
             email,
@@ -96,9 +102,13 @@ app.post('/tregserver', async (req, res) => {  // eg. http://localhost:3000/treg
             title,
             phoneNumber,
             attendDay1,
+            day1Date,
             attendDay2,
+            day2Date,
             attendDay3,
+            day3Date,
             attendDay4,
+            day4Date,
             paymentMethod,
             invoicePerson,
             invoiceEmail,
