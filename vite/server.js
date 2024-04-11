@@ -64,6 +64,7 @@ app.post('/tregserver', async (req, res) => {  // eg. http://localhost:3000/treg
         // Destructure the received data
         const {
             uid,
+            status,
             firstName,
             lastName,
             email,
@@ -95,6 +96,7 @@ app.post('/tregserver', async (req, res) => {  // eg. http://localhost:3000/treg
         // Prepare the registration data for Firestore
         const registrationData = {
             uid,
+            status,
             firstName,
             lastName,
             email,
