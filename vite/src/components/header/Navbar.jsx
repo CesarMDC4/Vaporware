@@ -34,7 +34,7 @@ export default function Example() {
               {/* Left section for logo */}
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <a href="/" className="flex flex-shrink-0 items-center">
-                <img src="/src/assets/img/logo/CypressEG.svg" alt="Logo" className="mb-4 object-scale-down max-h-14"/>
+                <img src="/src/assets/img/logo/CypressEG.svg" alt="Logo" className="mb-0 object-scale-down max-h-14"/>
                 </a>
               </div>
 

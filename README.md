@@ -1,4 +1,3 @@
-
 <a name="readme-top"></a>
 
 
@@ -73,8 +72,9 @@ The Cypress Engineering Group (CEG) seeks to elevate client experience through a
 * [![React][React.js]][React-url]
 * [![Vite][Vite.js]][Vite-url]
 * [![Tailwind CSS][Tailwind.css]][Tailwind-url]
-* [![SQLite][SQLite]][SQLite-url]
+* [![Firebase][Firebase]][Firebase-url]
 * [![Express][Express.js]][Express-url]
+* [![Cypress][Cypress]][Cypress-url]
 
 
 
@@ -211,7 +211,35 @@ To get a local copy up and running follow these simple example steps.
 
 
 ## Testing 
-<br></br>
+
+* [![Cypress][Cypress]][Cypress-url]
+
+#### Setting Up Cypress with npx  
+1. Clone the repo
+   ```sh
+   git clone https://github.com/CesarMDC4/Vaporware
+   cd vite
+   ```
+2. Install NPM packages and Dependencies
+   ```sh
+   npm install
+   ```
+  3. Run the Development Server
+   ```sh
+	    npm run dev
+   ```
+   4. Open Automated Test Software GUI Cypress 
+  ```sh
+   npx cypress open 
+   ```
+5. Click E2E Testing and pick a browser for testing ( You should arrive at a screen like this )
+![Homepage](https://i.gyazo.com/65f05de5eea1bea44d7230aa5a735591.png)
+After you arrive at this page you can run existing tests or create your own. 
+
+## CI/CD Pipeline 
+
+
+
 
 ## Deployment
 <br></br>
@@ -271,3 +299,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Node-url]: https://nodejs.org/
 [npm]: https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
 [npm-url]: https://www.npmjs.com/
+[Firebase]: https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black 
+[Firebase-url]: https://firebase.google.com/
+[Cypress]: https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white 
+[Cypress-url]: https://www.cypress.io/

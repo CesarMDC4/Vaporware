@@ -8,9 +8,9 @@ describe('Footer', () => {
     cy.get('.bg-gray-500').should('be.visible');
 
     //Check if the logo is present and has correct attributes
-    cy.get('img[src="/src/assets/img/logo/CypressEG.png"]').should('be.visible');
-    cy.get('img[src="/src/assets/img/logo/CypressEG.png"]').should('have.attr', 'alt', 'Logo');
-    cy.get('img[src="/src/assets/img/logo/CypressEG.png"]').should('have.attr', 'class', 'mb-4 object-scale-down max-h-24');
+    cy.get('img[src="/src/assets/img/logo/CypressEG.svg"]').should('be.visible');
+    cy.get('img[src="/src/assets/img/logo/CypressEG.svg"]').should('have.attr', 'alt', 'Logo');
+    cy.get('img[src="/src/assets/img/logo/CypressEG.svg"]').should('have.class', 'mb-4 object-scale-down max-h-24');
 
     //Check if the contact information is displayed correctly
     cy.contains('CONTACT US').should('be.visible');
