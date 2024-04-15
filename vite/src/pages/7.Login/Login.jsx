@@ -84,7 +84,6 @@ export default function Login() {
     await signOut(auth);
     setIsLoggedIn(false);
     setUserEmail('');
-    localStorage.setItem('userId', '0');
     navigate('/login');
   };
 
