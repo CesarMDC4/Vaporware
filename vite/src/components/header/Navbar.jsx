@@ -28,7 +28,7 @@ const navigation = [
   { name: 'About Us', href: '/about', current: location.pathname == '/about' },
   { name: 'Contact', href: '/contact', current: location.pathname == '/contact'},
   { name: 'Profile',
-    current: location.pathname === '/login' || location.pathname === '/test',
+    current: location.pathname === '/login' || location.pathname === '/courseHistory',
     dropdownItems: [
       { name: 'Login', href: '/login' },
       { name: 'Training History', href: '/courseHistory' }
