@@ -14,7 +14,7 @@ const navigation = [
     current: false,
     dropdownItems: [
       { name: 'Login', href: '/login' },
-      { name: 'Training History', href: '/test' }
+      { name: 'Training History', href: '/courseHistory' }
     ]
   }
 ]
