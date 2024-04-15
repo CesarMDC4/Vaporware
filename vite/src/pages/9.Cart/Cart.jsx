@@ -99,7 +99,7 @@ const Cart = () => {
     };
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto overflow-hidden ">
             <h1 className="text-4xl font-bold text-center pt-4 pb-4">Shopping Cart</h1>
             {/* Register button */}
             <div className="flex justify-end w-full">
