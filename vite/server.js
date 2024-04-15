@@ -127,6 +127,11 @@ app.post('/tregserver', async (req, res) => {  // eg. http://localhost:3000/treg
     }
 });
 
+// Health Check Endpoint
+app.get('/health', (req, res) => {
+    res.status(200).send({status: "up"});
+});
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
