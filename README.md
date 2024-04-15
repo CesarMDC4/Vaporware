@@ -157,7 +157,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Firebase Database:
 <p align='center'>
-    <img src=" https://i.imgur.com/C97lb9Q.png " width="680" height="421">
+    <img src="https://i.imgur.com/kYtno1y.png" width="680" height="421">
     </p>
 
 
