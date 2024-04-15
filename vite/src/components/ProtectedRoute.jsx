@@ -5,6 +5,7 @@ const ProtectedRoute = ({ isAuthenticated, children }) => {
     if (!isAuthenticated) {
       return <Navigate to="/courseHistory" replace />;
     }
+    
   
     return children;
 };
