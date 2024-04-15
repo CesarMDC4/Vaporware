@@ -7,14 +7,14 @@ const Register = () => {
   const data = [
     { column1:  'CEG-TR-101', column2:  'Fri. March 8', column3:  'CalARP/RMP/PSM/CERS/Tier II Regulatory Compliance', column4:  ''},
     { column1:  'CEG-TR-201', column2:  'Thurs. March 14', column3:  'Basic Industrial Ammonia Refrigeration (RETA IR Book 1)', column4:  'March 2024'},
-    { column1:  'CEG-TR-202', column2:  'Fri. March 15', column3:  'Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)', column4:  'link'},
+    { column1:  'CEG-TR-202', column2:  'Fri. March 15', column3:  'Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)', column4: <a href='https://docs.google.com/forms/d/e/1FAIpQLSdZsLQYyRLEonEQ3q1Vq80lD2t9YMkdaQxUKbuMxdy-AUmqYA/viewform?usp=pp_url' style={{textDecoration: 'underline', color: 'red'}}>Register Form</a>},
     { column1:  'CEG-TR-301', column2:  'Fri. March 22', column3:  'HAZWOPER 8-hour Refresher Training', column4:  ''},
   ]
 
   const data2 = [
     { column5:  'CEG-TR-101', column6:  'Thurs. May 2', column7:  'CalARP/RMP/PSM/CERS/Tier II Regulatory Compliance', column8:  ''},
     { column5:  'CEG-TR-201', column6:  'Thurs. May 9', column7:  'Basic Industrial Ammonia Refrigeration (RETA IR Book 1)', column8:  'May 2024'},
-    { column5:  'CEG-TR-202', column6:  'Fri. May 10', column7:  'Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)', column8:  'link'},
+    { column5:  'CEG-TR-202', column6:  'Fri. May 10', column7:  'Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)', column8: <a href='https://docs.google.com/forms/d/e/1FAIpQLSdAc6aGpSI3xhEiGFNiXtN7hSlmRwW8MfYipNtmUgdbOPevKw/viewform?usp=pp_url' style={{textDecoration: 'underline', color: 'red'}}>Register Form</a>},
     { column5:  'CEG-TR-301', column6:  'Thurs. May 16', column7:  'HAZWOPER 8-hour Refresher Training', column8:  ''},
 
   ];
@@ -22,14 +22,14 @@ const Register = () => {
   const data3 = [
     {column9:  'CEG-TR-101', column10:  'Thurs. July 18', column11:  'CalARP/RMP/PSM/CERS/Tier II Regulatory Compliance', column12:  ''},
     {column9:  'CEG-TR-201', column10:  'Thurs. July 25', column11:  'Basic Industrial Ammonia Refrigeration (RETA IR Book 1)', column12:  'July & Aug 2024'},
-    {column9:  'CEG-TR-202', column10:  'Fri. July 26', column11:  'Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)', column12:  'link'},
+    {column9:  'CEG-TR-202', column10:  'Fri. July 26', column11:  'Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)', column12: <a href='https://docs.google.com/forms/d/e/1FAIpQLSfOXUhR67McpWluKU08F4IdBPy1yT3pL7s9D9Gy6vk2hoY1MA/viewform?usp=pp_url' style={{textDecoration: 'underline', color: 'red'}}>Register Form</a>},
     {column9:  'CEG-TR-301', column10:  'Thurs. Aug 1', column11:  'HAZWOPER 8-hour Refresher Training', column12:  ''},
   ];
 
   const data4 = [
     {column13:  'CEG-TR-101', column14:  'Thurs. Sep 19', column15:  'CalARP/RMP/PSM/CERS/Tier II Regulatory Compliance', column16:  ''},
     {column13:  'CEG-TR-201', column14:  'Thurs. Sep 26', column15:  'Basic Industrial Ammonia Refrigeration (RETA IR Book 1)', column16:  'Sep & Oct 2024'},
-    {column13:  'CEG-TR-202', column14:  'Fri. Sep 27', column15:  'Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)', column16:  'link'},
+    {column13:  'CEG-TR-202', column14:  'Fri. Sep 27', column15:  'Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)', column16: <a href='https://docs.google.com/forms/d/e/1FAIpQLSfkScAliKERXwF6RkTPrLTMegS1w1Cq-4vf5Y8v64LYl9P4uA/viewform?usp=pp_url' style={{textDecoration: 'underline', color: 'red'}}>Register Form</a>},
     {column13:  'CEG-TR-301', column14:  'Thurs. Oct 3', column15:  'HAZWOPER 8-hour Refresher Training', column16:  ''}
   ];
 
