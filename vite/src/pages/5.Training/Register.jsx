@@ -41,7 +41,7 @@ const Register = () => {
       </div>
          <h1 className="text-center text-3xl mb-4 font-sans text-gray-600">RPM/PSM Regulatory Compliance, Ammonia Refrigeration, and HAZWOPER Training</h1>
          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
-            <div>
+            <div class="max-w-[800px] justify-self-end">
               <p>Training designed for refrigeration Facility Management, RMP/PSM Administrators, Refrigeration
                 Operators and Technicians, Safety Personnel, Safety Auditors, Agency Inspectors and those with limited
                 refrigeration and compliance experience.
@@ -75,7 +75,7 @@ const Register = () => {
             }
           `}
         </style>
-          <div>
+          <div class="max-w-[800px] justify-self-start">
             <p className="oval border-2 bg-green-200 m-auto text-center p-7 font-bold">
               <span class="text-red-500">Bonus!</span><br/>
               Bring your facility P&ID along with any questions you have about your system for a 
