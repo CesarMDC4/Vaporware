@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react';
-import { Products } from '../8.Products/products.js';
+import React, { useContext, useState } from 'react';
 import { CatalogContext } from "../../context/catalog-context";
-import { Product } from '/src/pages/8.Products/product.jsx';
+import { Products } from '../8.Products/products.js';
 import { CartItem } from "/src/pages/9.Cart/cart-item.jsx";
 
 
@@ -107,7 +106,7 @@ const Cart = () => {
                 <button
                     onClick={handleRegister}
                     className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                    Register
+                    Add to Training
                 </button>
             </div>
             {Products.map((cartItems) => {
