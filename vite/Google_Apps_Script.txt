@@ -1,0 +1,403 @@
+var CYPRESS_SERVER_URL = "https://55ad-73-220-132-184.ngrok-free.app"; // REPLACE WITH YOUR ACTUAL SERVER URL (PLEASE VERIFY URL FOR CORRECTNESS)
+
+/* On form submit */
+function newFormResponse() {
+
+  var TrainingDateAll = "February 5-8, 2024";
+  var TrainingDateDay1 = "Monday, Feb. 5, 2024";
+  var TrainingDateDay2 = "Tueesday, Feb. 6, 2024";
+  var TrainingDateDay3 = "Wednesday, Feb. 7, 2024";
+  var TrainingDateDay4 = "Thursday, Feb. 8, 2024";
+  /* These MUST EXACTLY MATCH the way the dates are written in the questions on the form -- copy and paste suggested */
+  var FormTrainingDate1 = "Mon. Feb. 5, 2024";
+  var FormTrainingDate2 = "Tue. Feb. 6, 2024";
+  var FormTrainingDate3 = "Wed. Feb. 7, 2024";
+  var FormTrainingDate4 = "Thurs. Feb. 8, 2024";
+  
+  /* Notify CEG that there is a new response to the training registration form */
+  var formURL = FormApp.getActiveForm().getPublishedUrl();
+  var formDestinationID = FormApp.getActiveForm().getDestinationId();
+  var formDestinationURL = "https://docs.google.com/spreadsheets/d/" + formDestinationID;
+  var CEGemailbody = (new Date()) + "<br><br>Your Google Form with the following link has a new response: <br>" + formURL + "<br><br>Here's a link to the spreadsheet with the responses: <br>" + formDestinationURL + "<br><br>Summary of new response: <br>";
+  var ss = SpreadsheetApp.openById(formDestinationID);
+  
+  var emailtable = "<table border=\"1\" style=\"border-collapse: collapse;\">";
+  var form = FormApp.getActiveForm();
+  var allResponses = form.getResponses(); /* gets all responses to the form */
+  var numResponsesIndex = allResponses.length - 1; /* gets index for last response; number of responses to form starts at 1, but index starts at 0, so need to subtract 1 for index of responses */
+  var lastResponse = allResponses[numResponsesIndex]; /* gets the whole last response (all answers from the last person who submitted answers to the form) */
+  var lastResponseAnswers = lastResponse.getItemResponses(); /* gets answers to each question from last response */
+  var questionnum = 0; /* question number for table; question number will be (i+1) since i, the index for the loop, starts at 0 */
+  var AttendDays = 0;
+  for (var i = 0; i < lastResponseAnswers.length; i++) { /* loop thru lastResponseAnswers to get title (question) and answer for each question in the last response */
+    /* add the answers to the table */
+    var label = lastResponseAnswers[i].getItem().getTitle();
+    var data = lastResponseAnswers[i].getResponse();
+    questionnum = i+1;
+    emailtable += "<tr><td style=\"padding: 0.5em;\">" + questionnum + "</td><td style=\"padding: 0.5em;\">"+ label + "</td><td style=\"padding: 0.5em;\">" + data + "</td></tr>";
+    if (label == "First Name") {
+      var respondantFirstName = data;
+    }
+    if (label == "Last Name") {
+      var respondantLastName = data;
+    }
+    if (label == "Email Address") {
+      var respondantEmail = data;
+    }
+    /* Set flags to determine prices */
+    if (label == "Will you attend Day 1 of the training, " + FormTrainingDate1 + "?" & data == "Yes") {
+      var FlagDay1 = 1;
+      AttendDays += 1;
+    }
+      else if (label == "Will you attend Day 1 of the training, " + FormTrainingDate1 + "?" & data == "No") {
+      var FlagDay1 = 0;
+    }
+    if (label == "Will you attend Day 2 of the training, " + FormTrainingDate2 + "?" & data == "Yes") {
+      var FlagDay2 = 1;
+      AttendDays += 1;
+    }
+    else if (label == "Will you attend Day 2 of the training, " + FormTrainingDate2 + "?" & data == "No") {
+      var FlagDay2 = 0;
+    }
+    if (label == "Will you attend Day 3 of the training, " + FormTrainingDate3 + "?" & data == "Yes") {
+      var FlagDay3 = 1;
+      AttendDays += 1;
+    }
+    else if (label == "Will you attend Day 3 of the training, " + FormTrainingDate3 + "?" & data == "No") {
+      var FlagDay3 = 0;
+    }
+    if (label == "Will you attend Day 4 of the training, " + FormTrainingDate4 + "?" & data == "Yes") {
+      var FlagDay4 = 1;
+      AttendDays += 1;
+    }
+    else if (label == "Will you attend Day 4 of the training, " + FormTrainingDate4 + "?" & data == "No") {
+      var FlagDay4 = 0;
+    }
+  };
+  
+  /* Determine price based on AttendDays */
+  if (AttendDays == 1) {
+    var price = "$550";
+  }
+  else if (AttendDays == 2) {
+    var price = "$1100";
+  }
+  else if (AttendDays == 3) {
+    var price = "$1650";
+  }
+  else if (AttendDays == 4) {
+    var price = "$2000";
+  }
+  else {
+    var price = "ERROR";
+  }
+
+  i += 1;
+  emailtable += "<tr><td style=\"padding: 0.5em;\">" + i + "</td><td style=\"padding: 0.5em;\">Price</td><td style=\"padding: 0.5em;\">" + price + "</td></tr>";
+  emailtable += "</table>";
+  CEGemailbody += emailtable;
+  
+  MailApp.sendEmail({
+    to: "jebuzz.14@gmail.com",
+    subject: TrainingDateAll + " " + FormApp.getActiveForm().getTitle() + " - New Form Response",
+    htmlBody: CEGemailbody
+  });
+  
+  /* Send copy of responses to registrant */
+  var CEGlogo = "<img src=\"https://www.cypresseg.com/img/logo/CypressEG.png\" alt=\"Cypress Engineering Group Logo\" width=\"250\"><br><br>";
+  var respondantEmailGreeting = "Hello " + respondantFirstName + " " + respondantLastName + ",<br><br>";
+  var respondantEmailIntro = "Thank you for registering for Cypress Engineering Group's RMP/PSM Regulatory Compliance and Ammonia Refrigeration Training.<br><br>";
+  var TrainingDates = "<b>Training Dates:</b> " + TrainingDateAll + ", 8:00am-5:00pm each day, 12pm-1pm for lunch.<br><br>";
+  var TrainingLocationGoogleMapURL = "https://goo.gl/maps/F6KTCpSHg62pQAwZA"
+  var TrainingLocation = "<b>Training Location:</b><br>Yuma Civic Center<br>1440 W Desert Hills Drive<br>Yuma, AZ 85365 <br>" + "Open in Google Maps: " + TrainingLocationGoogleMapURL + "<br><br>";
+  var TrainingDay1Courses = "<b>Day 1, " + TrainingDateDay1 + ":</b><br>CEG-TR-101: CalARP/RMP/PSM/CERS/Tier II Regulatory Compliance<br><br>";
+  var TrainingDay2Courses = "<b>Day 2, " + TrainingDateDay2 + ":</b><br>CEG-TR-201: Basic Industrial Ammonia Refrigeration (RETA IR Book 1)<br><br>";
+  var TrainingDay3Courses = "<b>Day 3, " + TrainingDateDay3 + ":</b><br>CEG-TR-202: Intermediate Industrial Ammonia Refrigeration (RETA IR Book 2)<br><br>";
+  var TrainingDay4Courses = "<b>Day 4, " + TrainingDateDay4 + ":</b><br>CEG-TR-301: HAZWOPER 8-hour Refresher Training<br><br>";
+  var respondantResponses = "Below is a summary of your registration information for your records.<br>" + emailtable + "<br><br>";
+  var TrainingCost = "Based on your registration information, your cost is <b>" + price + "</b>. If you indicated that you would like us to send you an invoice, please look out for an email from us in the next few days. Otherwise, please send a check payable to \"Cypress Engineering Group\".<br><br>";
+  var respondantEmailClosing = "If you have any questions, feel free to contact us by calling 831-218-1802 or emailing training@cypresseg.com. We look forward to seeing you at the training!<br><br>Cypress Engineering Group<br>8 Harris Court, Suite A8<br>Monterey, CA 93940<br>www.cypresseg.com<br>831-218-1802<br><br>";
+  var respondantEmailbody = CEGlogo + respondantEmailGreeting + respondantEmailIntro + TrainingDates + TrainingDay1Courses + TrainingDay2Courses + TrainingDay3Courses + TrainingDay4Courses + TrainingLocation + respondantResponses + TrainingCost + respondantEmailClosing;
+  
+
+  MailApp.sendEmail({
+    to: respondantEmail,
+    replyTo: "jebuzz.14@gmail.com",
+    subject: "Cypress Engineering Group RMP/PSM Regulatory Compliance and Ammonia Refrigeration Training",
+    htmlBody: respondantEmailbody
+  });
+
+
+  /*** THE PORTION BELOW IS A NEW ADDITION TO THIS SCRIPT ***/
+
+  // Initialize an empty array for courses
+  var selectedCourses = [];
+
+  // Add courses conditionally based on the respondent's selections
+  if (FlagDay1) {
+      selectedCourses.push({
+          ref: "CEG-TR-101",
+          title: "8-Hr Regulatory Compliance",
+          topics: "CalARP, CERS, RMP, PSM, Regulatory Compliance",
+          date: TrainingDateDay1,
+          fee: "$550.00 /Prs"
+      });
+  }
+  if (FlagDay2) {
+      selectedCourses.push({
+          ref: "CEG-TR-201",
+          title: "8-Hr Basic Ammonia Refrigeration",
+          topics: "RETA Industrial Refrigeration Book I: Basic Ammonia Refrigeration",
+          date: TrainingDateDay2,
+          fee: "$550.00 /Prs"
+      });
+  }
+  if (FlagDay3) {
+      selectedCourses.push({
+          ref: "CEG-TR-202",
+          title: "8-Hr Intermediate Ammonia Refrigeration",
+          topics: "RETA Industrial Refrigeration Book II: Intermediate Ammonia Refrigeration",
+          date: TrainingDateDay3,
+          fee: "$550.00 /Prs"
+      });
+  }
+  if (FlagDay4) {
+      selectedCourses.push({
+          ref: "CEG-TR-301",
+          title: "8-Hr HAZWOPER",
+          topics: "HAZWOPER 8-hour Refresher Training",
+          date: TrainingDateDay3,
+          fee: "$550.00 /Prs"
+      });
+  }
+  
+  // Create a unique name for our PDF invoice:
+  var timestamp = new Date().getTime().toString();
+  var baseName = respondantFirstName + "_" + respondantLastName + "_" + timestamp;
+  var sanitizedBaseName = baseName.replace(/[^a-zA-Z0-9-_]/g, '_'); // Sanitize the base name and store it
+  var uniqueInvoiceName = sanitizedBaseName;
+
+  // Create the collection name for the database automatically:
+  var currentDate = new Date(); // This captures the current date and time
+  var currentMonth = currentDate.toLocaleString('default', { month: 'long' });
+  var currentYear = currentDate.getFullYear();
+  var collectionName = "registrations_" + currentMonth + "_" + currentYear;
+  var readableTimestamp = Utilities.formatDate(currentDate, "America/Los_Angeles", "MMMM dd, yyyy, hh:mm a"); // auto-adjusts for daylight savings time changes
+
+  // Prepare the form data to send after sending emails
+  var formDataToSend = {
+      uid: "",
+      status: "",
+      firstName: respondantFirstName,
+      lastName: respondantLastName,
+      email: respondantEmail,
+      companyName: "", // Initialize empty, to be filled below
+      title: "",
+      phoneNumber: "",
+      attendDay1: "",
+      day1Date: TrainingDateDay1,
+      attendDay2: "",
+      day2Date: TrainingDateDay2,
+      attendDay3: "",
+      day3Date: TrainingDateDay3,
+      attendDay4: "",
+      day4Date: TrainingDateDay4,
+      paymentMethod: "",
+      invoicePerson: "",
+      invoiceEmail: "",
+      poNumber: "",
+      total: price,
+      submissionTimestamp: readableTimestamp,
+      collectionName: collectionName,
+  };
+  
+  // Extract additional data from the lastResponseAnswers
+  lastResponseAnswers.forEach(function(itemResponse) {
+    var questionTitle = itemResponse.getItem().getTitle();
+    var response = itemResponse.getResponse();
+
+    // WARNING: For the switch statement below, ensure that the quotes exactly match the questions on the Google Form!
+    switch(questionTitle) {
+      case "Company/Organization":
+        formDataToSend.companyName = response;
+        break;
+      case "Title":
+        formDataToSend.title = response;
+        break;
+      case "Phone Number":
+        formDataToSend.phoneNumber = response;
+        break;
+      case "Will you attend Day 1 of the training, " + FormTrainingDate1 + "?":
+        formDataToSend.attendDay1 = response;
+        break;
+      case "Will you attend Day 2 of the training, " + FormTrainingDate2 + "?":
+        formDataToSend.attendDay2 = response;
+        break;
+      case "Will you attend Day 3 of the training, " + FormTrainingDate3 + "?":
+        formDataToSend.attendDay3 = response;
+        break;
+      case "Will you attend Day 4 of the training, " + FormTrainingDate4 + "?":
+        formDataToSend.attendDay4 = response;
+        break;
+      case "Payment Method":
+        formDataToSend.paymentMethod = response;
+        break;
+      case "Send invoice to this person:":
+        formDataToSend.invoicePerson = response;
+        break;
+      case "Send invoice to this email address:":
+        formDataToSend.invoiceEmail = response;
+        break;
+      case "PO number":
+        formDataToSend.poNumber = response;
+        break;
+      // Add more cases as needed for other questions
+    }
+  });
+  
+  // Debugging: Log the formDataToSend object to ensure it's structured correctly
+  // Logger.log(formDataToSend); // For testing only.
+
+  // Send the form data to the server and also generate the invoice:
+  processData(formDataToSend, TrainingDateAll, selectedCourses, uniqueInvoiceName);
+  
+} // end function newFormResponse()
+
+
+/***  THE FUNCTION BELOW IS A NEW ADDITION  ***/
+/* processData() sends the submitted Google Form data to the Cloud Firestore database and also generates a PDF invoice:
+** By design, if communication with the server fails, a PDF invoice will not be generated. */
+function processData(formData, weeklyDates, userCourses, invoiceName) {
+  var url = CYPRESS_SERVER_URL+'/tregserver';
+  var options = {
+    'method' : 'post',
+    'contentType': 'application/json',
+    'payload' : JSON.stringify(formData),
+    'muteHttpExceptions': true
+  };
+  try {
+    var response = UrlFetchApp.fetch(url, options);
+    
+    // Prepare invoiceData using the formData information for generating the PDF
+    var invoiceData = {
+        documentName: invoiceName,
+        invoiceDate: Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "MMMM dd, yyyy"),
+        companyName: "Cypress Engineering Group",
+        respondentFullName: formData.firstName + " " + formData.lastName,
+        trainingDates: weeklyDates,
+        trainingLocation: "Yuma Civic Center, 1440 W Desert Hills Drive, Yuma, AZ 85365",
+        courses: userCourses, // Use the dynamically built list of selected courses
+        totalPrice: formData.total
+    };
+    
+    generatePDFInvoice(invoiceData);
+  } catch (e) {
+    Logger.log(e.toString());
+    // Error handling can continue to ensure proper logging and alerting mechanisms
+  }
+} // end function processData()
+
+
+/* THE FUNCTION BELOW IS ANOTHER NEW ADDITION */
+// Generate a PDF Invoice for the form response.
+function generatePDFInvoice(invoiceData) {
+    var template = HtmlService.createTemplateFromFile('InvoiceTemplate');
+    
+    // Assign data to the template
+    template.documentName = invoiceData.documentName; // used internally in the template
+    template.invoiceDate = invoiceData.invoiceDate;
+    template.respondentFullName = invoiceData.respondentFullName;
+    template.trainingDates = invoiceData.trainingDates;
+    template.trainingLocation = invoiceData.trainingLocation;
+    template.courses = invoiceData.courses;
+    template.totalPrice = invoiceData.totalPrice;
+    
+    var htmlContent = template.evaluate().getContent();
+    var blob = Utilities.newBlob(htmlContent, "text/html").getAs("application/pdf");
+
+    // The documentName should already be sanitized and include the unique timestamp
+    var fileName = "Invoice-" + invoiceData.documentName + ".pdf";
+    
+    var invoiceFile = DriveApp.createFile(blob.setName(fileName));
+    // Error handling can be done here.
+    // Further actions like emailing the PDF can be added here.
+    return invoiceFile;
+}
+
+
+/* THE FUNCTION BELOW IS ANOTHER NEW ADDITION.
+** PLEASE NOTE: PDF storage in Google Drive requires the user's permission. When trying to generate an invoice PDF on a new Google account, please maunually run the function
+** below called testGeneratePDFInvoice() which will prompt Google to ask for your permission to store the generated pdf in your Google Drive.
+** Additionally, the function below called testGeneratePDFInvoice() is used for testing our PDF generation capabilities and for quickly checking out various visual tweaks. 
+** It is not called in our actual code but can be called manually for testing various visual html settings in our InvoiceTemplate.html and for granting permissions. */
+function testGeneratePDFInvoice() {
+    var timestamp = new Date().getTime().toString();
+    var sanitizedDocumentName = "TestInvoice_" + timestamp;
+    sanitizedDocumentName = sanitizedDocumentName.replace(/[^a-zA-Z0-9-_]/g, '_');
+
+    var testInvoiceData = {
+        documentName: sanitizedDocumentName,
+        invoiceDate: Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "MMMM dd, yyyy"),
+        respondentFullName: "John Doe",
+        trainingDates: "February 5-8, 2024",
+        trainingLocation: "Yuma Civic Center, 1440 W Desert Hills Drive, Yuma, AZ 85365",
+        courses: [
+            {
+                ref: "CEG-TR-101",
+                title: "8-Hr Regulatory Compliance",
+                topics: "CalARP, CERS, RMP, PSM, Regulatory Compliance",
+                date: "February 5, 2024",
+                fee: "$550.00 /Prs"
+            },
+            {
+                ref: "CEG-TR-201",
+                title: "8-Hr Basic Ammonia Refrigeration",
+                topics: "RETA Industrial Refrigeration Book I: Basic Ammonia Refrigeration",
+                date: "February 6, 2024",
+                fee: "$550.00 /Prs"
+            },
+            {
+                ref: "CEG-TR-202",
+                title: "8-Hr Intermediate Ammonia Refrigeration",
+                topics: "RETA Industrial Refrigeration Book II: Intermediate Ammonia Refrigeration",
+                date: "February 7, 2024",
+                fee: "$550.00 /Prs"
+            },
+            {
+                ref: "CEG-TR-301",
+                title: "8-Hr HAZWOPER",
+                topics: "HAZWOPER 8-hour Refresher Training",
+                date: "February 8, 2024",
+                fee: "$550.00 /Prs"
+            }
+        ],
+        totalPrice: "$2000"
+    };
+    generatePDFInvoice(testInvoiceData);
+}
+
+
+/* THE FUNCTION BELOW IS ANOTHER NEW ADDITION.
+** testServerHealth() performs a basic GET request to our server's health check URL and logs the result */
+function testServerHealth() {
+  let url = CYPRESS_SERVER_URL + '/health';
+  var options = {
+    'method': 'get',
+    'muteHttpExceptions': true,
+    };
+
+  try {
+    var response = UrlFetchApp.fetch(url, options);
+    var contentText = response.getContentText();
+    // Logger.log('Raw response: ' + contentText);  // Log the raw response
+
+    if (response.getResponseCode() == 200) {
+      var content = JSON.parse(contentText);
+      Logger.log('Server is up and running: ' + content.status);
+    } else {
+      Logger.log('Server is not responding as expected. Status code: ' + response.getResponseCode());
+    }
+  } catch (error) {
+    Logger.log('Failed to reach the server. Error: ' + error.toString());
+  }
+}
