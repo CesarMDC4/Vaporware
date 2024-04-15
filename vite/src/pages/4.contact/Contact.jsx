@@ -120,6 +120,24 @@ const Contact = () => {
                 />
 
                 <Controller
+                  name="phone"
+                  control={control}
+                  rules={{ required: true, pattern: /^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/ }}
+                  render={({ field }) => (
+                    <div className="p-5 bg-transparent">
+                      <span className="mb-4 text-m tracking-tight text-black text-center font-semibold">Phone Number</span>
+                      <input
+                        type="tel"
+                        placeholder="enter phone number here..."
+                        {...field}
+                        className={`block w-full p-3 border rounded ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                      />
+                      {errors.phone && <span className="text-red-500">Please enter a valid phone number</span>}
+                    </div>
+                  )}
+                />   
+
+                <Controller
                   name="message"
                   control={control}
                   rules={{ required: true }}
