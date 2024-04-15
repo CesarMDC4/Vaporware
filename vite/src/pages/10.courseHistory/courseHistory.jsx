@@ -12,6 +12,8 @@ import { collection, getDocs, where, getFirestore, query} from 'firebase/firesto
 const CourseHistory = () => {
   const [courseData, setCourseData] = useState([]);
   const [userName, setUserName] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
   async function queryUserDetails(uid){
     try {
       const db = getFirestore();
@@ -59,7 +61,12 @@ const CourseHistory = () => {
     try
     {
       const sessionID = localStorage.getItem('userId');
-      queryUserDetails(sessionID);
+      if (sessionID === '0') {
+        setErrorMessage('Please Sign In. Get an account by contacting CEG.');
+      }
+      else{
+        queryUserDetails(sessionID);
+      }
     } 
     catch (error) 
     {
@@ -75,20 +82,23 @@ const CourseHistory = () => {
     <div class="flex flex-wrap flex-col h-full">
 
       
-      <div class="bg-gray-900 text-2xl font-bold text-center pt-4 text-white h-24">
-        <h1>Course History</h1>
-        <h2>Name: {userName} </h2>
-      </div>
+        <div class="bg-gray-900 text-2xl font-bold text-center pt-4 text-white h-24">
+            <h1>Course History</h1>
+            <h2>Name: {userName} </h2>
+        </div>
+        {errorMessage && (
+            <div class="bg-red-500 text-white text-center text-xl h-screen">
+                {errorMessage}
+            </div>
+        )}
 
+        {!errorMessage &&(
+            <div class=" text-center bg-gradient-to-t from-stone-300 via-zinc-300 to-white rounded text-black text-lg h-screen">
 
-      <div class=" text-center bg-gradient-to-t from-stone-300 via-zinc-300 to-white rounded text-black text-lg h-screen">
-
-        <CourseHistoryTable data={courseData} />
-      
-
-            
-      </div>
-      
+                <CourseHistoryTable data={courseData} />
+                
+            </div>
+        )}
     </div>
     
     
