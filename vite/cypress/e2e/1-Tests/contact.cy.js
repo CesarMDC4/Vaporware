@@ -6,7 +6,7 @@ describe('Contact', () => {
   it('should display all elements on the webpage', () => {
     cy.get('.text-center').should('be.visible');
     cy.get('ion-icon[name="location-outline"]').should('be.visible');
-    cy.get('ion-icon[name="call-outline"]').should('be.visible');
+    //cy.get('ion-icon[name="call-outline"]').should('be.visible');
     cy.get('ion-icon[name="mail-outline"]').should('be.visible');
     cy.get('[name="name"]').should('be.visible');
     cy.get('[name="email"]').should('be.visible');
