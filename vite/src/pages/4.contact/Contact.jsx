@@ -53,37 +53,29 @@ const Contact = () => {
         <h1 className="text-center font-bold text-4xl mt-4 mb-8 font-sans">Contact Us</h1>
       </div>
 
-      <div className="max-w-screen-xl mx-auto justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-0">
-        <div className="max-w-sm bg-transparent">
-          <ion-icon name="location-outline" className="mx-auto"></ion-icon>
-          <div className="p-5 bg-transparent">
-            <a href="#">
-              <h2 className="mb-4 text-m tracking-tight text-black text-center">Address</h2>
-            </a>
-            <p className="mt-4 list-disc pl-5 text-black underline text-center">8 Harris Court Suite A8, Monterey, CA 93940, USA</p>
+      <div className="xl:container mx-auto pb-20 ">
+        <div className="max-w-screen-xl mx-auto justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-0">
+          <div className="max-w-sm bg-transparent md:col-span-2 ml-16">
+            <ion-icon name="mail-outline" className="mx-auto"></ion-icon>
+            <div className="p-5 bg-transparent">
+              <a href="#">
+                <h2 className="mb-4 text-m tracking-tight text-black text-center">Email and Phone</h2>
+              </a>
+              <p className="mt-4 list-disc text-black underline text-center">info@cypresseg.com</p>
+              <p className="mt-2 text-black text-center">831-218-1802</p> 
+            </div>
+          </div>
+          <div className="max-w-sm bg-transparent md:col-span-1">
+            <ion-icon name="location-outline" className="mx-auto"></ion-icon>
+            <div className="p-5 bg-transparent">
+              <a href="#">
+                <h2 className="mb-4 text-m tracking-tight text-black text-center">Address</h2>
+              </a>
+              <p className="mt-4 text-black underline text-center">8 Harris Court Suite A8, Monterey, CA 93940, USA</p>
+            </div>
           </div>
         </div>
-        <div className="max-w-sm bg-transparent">
-          <ion-icon name="call-outline" className="mx-auto"></ion-icon>
-          <div className="p-5 bg-transparent">
-            <a href="#">
-              <h2 className="mb-4 text-m tracking-tight text-black text-center">Phone Number</h2>
-            </a>
-            <p className="mt-4 list-disc pl-5 text-black underline text-center">+1 831.218.1802</p>
-          </div>
-        </div>
-        <div className="max-w-sm bg-transparent">
-          <ion-icon name="mail-outline" className="mx-auto"></ion-icon>
-          <div className="p-5 bg-transparent">
-            <a href="#">
-              <h2 className="mb-4 text-m tracking-tight text-black text-center">Email</h2>
-            </a>
-            <p className="mt-4 list-disc pl-5 text-black underline text-center">info@cypresseg.com</p>
-          </div>
-        </div>
-      </div>
 
-      <div className="xl:container mx-auto pb-20">
         <div className="flex justify-center text-xl items-center mb-8">
           <h1 className="text-center font-bold text-3xl mb-2">Send Us a Message</h1>
         </div>
@@ -128,24 +120,6 @@ const Contact = () => {
                 />
 
                 <Controller
-                  name="phone"
-                  control={control}
-                  rules={{ required: true, pattern: /^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/ }}
-                  render={({ field }) => (
-                    <div className="p-5 bg-transparent">
-                      <span className="mb-4 text-m tracking-tight text-black text-center font-semibold">Phone Number</span>
-                      <input
-                        type="tel"
-                        placeholder="enter phone number here..."
-                        {...field}
-                        className={`block w-full p-3 border rounded ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
-                      />
-                      {errors.phone && <span className="text-red-500">Please enter a valid phone number</span>}
-                    </div>
-                  )}
-                />
-
-                <Controller
                   name="message"
                   control={control}
                   rules={{ required: true }}
@@ -176,14 +150,13 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          {/* Google Map */}
-          <div className="flex justify-center h-full">
-            <div className="flex justify-center items-center h-full">
+          <div className="flex justify-center h-full ">
+            <div className="flex justify-center pt-16 items-center h-full">
               <iframe
                 title="Google Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.886191366926!2d-121.81947299999999!3d36.5809603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808de54ed6e2b2cf%3A0xfb5cdcf2bf37bd10!2sCypress%20Engineering%20Group!5e0!3m2!1sen!2sus!4v1708819368630!5m2!1sen!2sus"
-                width="350"
-                height="350"
+                width="650"
+                height="500"
                 style={{ border: '1px solid #ccc' }}
                 allowFullScreen=""
                 loading="lazy"
