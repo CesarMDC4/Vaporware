@@ -1,17 +1,34 @@
 import { Disclosure, Menu } from '@headlessui/react';
 import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'Services', href: '/services', current: false, dropdownItems:[{name: 'HVAC, Plumbing, & Fire Protection', href:'/services/service1'},{name: 'Building Cx & Energy Audits', href:'/services/service2'},{name: 'Industrial Refrigeration', href:'/services/service3'},{name: 'Enviromental Compliance', href:'/services/service4'},{name: 'Regulatory Compliance', href:'/services/service5'},{name: 'Training & Technical Support ', href:'/services/service6'}]},
-  { name: 'Training', href: '/training', current: false, dropdownItems:[{name: 'Course Catalog', href: '/Training/CourseCatalog'}, {name: 'Register', href: '/Training/Register'}] }, 
-  { name: 'About Us', href: '/about', current: false },
-  { name: 'Contact', href: '/contact', current: false },
-  {
-    name: 'Profile',
-    current: false,
+  { name: 'Home', href: '/', current: location.pathname == '/'  },
+  { name: 'Services', 
+    current: location.pathname === '/services/service1' || location.pathname === '/services/service2'
+    || location.pathname === '/services/service3' || location.pathname === '/services/service4'
+    || location.pathname === '/services/service5' || location.pathname === '/services/service6',
+    dropdownItems:[{name: 'HVAC, Plumbing, & Fire Protection', href:'/services/service1'},
+      {name: 'Building Cx & Energy Audits', href:'/services/service2'},
+      {name: 'Industrial Refrigeration', href:'/services/service3'},
+      {name: 'Enviromental Compliance', href:'/services/service4'},
+      {name: 'Regulatory Compliance', href:'/services/service5'},
+      {name: 'Training & Technical Support ', href:'/services/service6'}
+    ]
+  },
+  { name: 'Training', href: '/training', 
+    current: location.pathname == '/Training/CourseCatalog' || location.pathname == '/Training/Register', 
+    dropdownItems:[
+      {name: 'Course Catalog', href: '/Training/CourseCatalog'}, 
+      {name: 'Register', href: '/Training/Register'}
+    ] 
+  }, 
+  { name: 'About Us', href: '/about', current: location.pathname == '/about' },
+  { name: 'Contact', href: '/contact', current: location.pathname == '/contact'},
+  { name: 'Profile',
+    current: location.pathname === '/login' || location.pathname === '/test',
     dropdownItems: [
       { name: 'Login', href: '/login' },
       { name: 'Training History', href: '/courseHistory' }
@@ -24,6 +41,8 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const [currentNavigation, setCurrentNavigation]= useState(navigation);
+  const location = useLocation();
   return (
     <Disclosure as="nav" className="bg-white shadow-md">
       {({ open }) => (
