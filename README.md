@@ -95,7 +95,7 @@ To get a local copy up and running follow these simple example steps.
 
 
 
-### Installation
+### Installation Instructions
 
 
 1. Clone the repo
@@ -112,7 +112,7 @@ To get a local copy up and running follow these simple example steps.
 	   npm run dev
    ```
 
-4. Enter your API in `config.js` ( TBD)
+4. Enter your API in `config.js` (TBD)
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
@@ -121,66 +121,43 @@ To get a local copy up and running follow these simple example steps.
 
 
 
-## Project Design and Wireframes
-<!-- Include mockup of pages and then show some pages from the Dev Prototype(actual website) along with ERD  -->
+## Cypress Engineering Group Portal Images:
+<!-- Site Portal Images  -->
 
-<img src="https://www.cypresseg.com/img/logo/CypressEG.png" alt="placeholder-template" width="100" height="30">
 <br></br>
-
--   <h5> Mockup Wireframes:</h5>
-   
-    <p align='center'>
-    <img src="https://i.imgur.com/zmKd4VM.png" alt="Login Wireframe" width="485 height="320"  >   
-    </p>
-    
-    <p align='center'>
-    <img src="https://i.imgur.com/xhtevHY.png" alt="Courses Wireframe" width="485" height="320">
-    </p>
-
-    <p align='center'>
-    <img src="https://i.imgur.com/8wb5ntw.png" alt="ShoppingCart Wireframe" width="485" height="320">
-    </p>
-
-- <h5> Actual CEG Website (Currently In Development):</h5>
-
-    <p align='center'> CEG Login Page: </p>
-    <p align='center'>
-    <img src="https://i.imgur.com/bJ3U7g8.png" alt="Login Page" width="485" height="330"  >   
-    </p>
-    
-    <p align='center'> CEG Services Page: </p>
-    <p align='center'>
-    <img src="https://i.imgur.com/fWqFwOr.png" alt="Services selection" width="485" height="330">
-     </p>
-
-    <p align='center'> CEG Contact Us Page:</p>
-    <p align='center'>
-    <img src="https://i.imgur.com/WZbpr0D.png" alt="Contact Us" width="485" height="340">
-    </p>
-    
-    <p align='center'> CEG Homepage Page: </p>
-    <p align='center'>
-    <img src="https://i.imgur.com/EpUWjkp.png" alt="Homepage" width="485" height="340"  >   
-    </p>
-    
-    <p align='center'> CEG About Us Page: </p>
-    <p align='center'>
-    <img src="https://i.imgur.com/9gVXfg1.png" alt="About us" width="485" height="340">
-     </p>
-    
-    <p align='center'> CEG Contact Us Page: </p>
-    <p align='center'>
-    <img src="https://i.imgur.com/FI2wXfL.png" alt="Contact us" width="485" height="340">
-    </p>
-    
-    
-    
-    
-    
-
-## CEG SQLite Database Entity Relational Diagram:
+<center> <h3>Cypress Engineering Group Home Page: </h2></center>
 <p align='center'>
-    <img src="https://i.imgur.com/zgeGqN3.png" width="680" height="440">
+<img src="https://i.imgur.com/VduYJXL.png" alt="Cypress Engineering Homepage" width="660" height="420">
+</p>
+
+<center> <h3>Cypress Engineering Group Services Page: </h2></center>
+<p align='center'>
+<img src="https://i.imgur.com/Of8aibW.png" alt="Cypress Engineering Services Page" width="660" height="420">
+</p>
+
+<center> <h3>Cypress Engineering Group Training Page: </h2></center>
+<p align='center'>
+<img src="https://i.imgur.com/8SvcozA.png" alt="Cypress Engineering Training Page" width="660" height="420">
+</p>
+
+<center> <h3>Cypress Engineering Group About Us Page: </h2></center>
+<p align='center'>
+<img src="https://i.imgur.com/mwNv7KL.png" alt="Cypress Engineering About Us Page" width="660" height="420">
+</p>
+
+<center> <h3>Cypress Engineering Group Contact Us Page: </h2></center>
+<p align='center'>
+<img src="https://i.imgur.com/LAyHGoB.png" alt="Cypress Engineering Contact Us Page" width="660" height="420">
+</p>
+
+<center> <h3>Cypress Engineering Group Profile Page: </h2></center>
+<p align='center'>
+<img src="https://i.imgur.com/ZxV2BwT.png" alt="Cypress Engineering Profile Page" width="660" height="420">
+</p>
+
+## Firebase Database:
+<p align='center'>
+    <img src=" https://i.imgur.com/C97lb9Q.png " width="680" height="421">
     </p>
 
 
@@ -190,22 +167,21 @@ To get a local copy up and running follow these simple example steps.
 <!-- Features-->
 ## Features & Estimated Project Delivery
 
-- **Front End UI/UX**
-  - 90% Completed in 190
-  - Finishing Touches completed by: May 2024
+- **Front End User Interface And Features**
+  - Full Navigation Bar Highlighting
+  - Mobile Menu Resizable Feature
+  - Google Maps API Implemented
 <br></br>
-<br></br>
-- **User Authentication (Register/Login)**
-  - Anticipated Delivery: May 2024
-
-<br></br>
-- **Backend Built**
-  - Payment Processing
-  - User Authentication & Management
-  - Training Services
-  - Anticipated Delivery at end of CSC 191: May 2024
-
-
+- **Firebase Backend Database**
+  - Custom Invoice System
+  - User Authentication with Unique User ID
+  - User 'Course History' feature
+  - Custom Google App Scripts
+ <br></br>
+- **Firebase User Authentication** 
+  - Login page 
+  - Client customer account creation with admin 
+  - Password reset functionality
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
