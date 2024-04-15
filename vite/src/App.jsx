@@ -19,7 +19,7 @@ import About from './pages/6.About/About';
 import Login from './pages/7.Login/Login';
 import Cart from './pages/9.Cart/Cart';
 import Reset from './pages/7.Login/Reset';
-import Test from './pages/11.Test/Test';
+import CourseHistory from './pages/10.courseHistory/CourseHistory';
 import { CatalogContextProvider } from './context/catalog-context';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -53,9 +53,9 @@ function App() {
             <Route path='/training/register' element={<Register />} />
             <Route path='/about' element={<About />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/test' element={
+            <Route path='/courseHistory' element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <Test />
+                <CourseHistory />
               </ProtectedRoute>
             } />
           </Routes>

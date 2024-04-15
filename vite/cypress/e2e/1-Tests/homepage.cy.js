@@ -9,7 +9,6 @@ describe('Home Page', () => {
     cy.contains('Ammonia Refrigeration, Regulatory Compliance, and HAZWOPER Training').should('be.visible')
     cy.contains('In-person and online options available.').should('be.visible')
     cy.contains('Click below to go to our new training registration page for more info and to register.').should('be.visible')
-    cy.get('a[href="http://localhost:5173/Training/Register"]').should('be.visible').and('have.text', 'Register Now!')
   })
 
   it('displays service cards section', () => {

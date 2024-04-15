@@ -71,7 +71,7 @@ export default function Login() {
       if (response && response.redirect) {
         navigate(response.redirect); // Redirect to the specified URL
       } else {
-        navigate('/test'); // Default redirect to /test if no redirect URL is provided
+        navigate('/courseHistory'); // Default redirect to /test if no redirect URL is provided
       }
     } catch (error) {
       console.error('Login failed:', error.message);

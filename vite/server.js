@@ -58,11 +58,13 @@ admin.initializeApp({
 const db = admin.firestore();
 
 // Route to add data to Firestore Database (Cloud Firestore):
-app.post('/trainingregistration', async (req, res) => {  // eg. http://localhost:3000/trainingregistration
+app.post('/tregserver', async (req, res) => {  // eg. http://localhost:3000/tregserver
     //console.log("Received data:", req.body); // log the body of the request (FOR TESTING ONLY!)
     try {
         // Destructure the received data
         const {
+            uid,
+            status,
             firstName,
             lastName,
             email,
@@ -70,19 +72,31 @@ app.post('/trainingregistration', async (req, res) => {  // eg. http://localhost
             title,
             phoneNumber,
             attendDay1,
+            day1Date,
             attendDay2,
+            day2Date,
             attendDay3,
+            day3Date,
             attendDay4,
+            day4Date,
             paymentMethod,
             invoicePerson,
             invoiceEmail,
             poNumber,
             total,
-            submissionTimestamp
+            submissionTimestamp,
+            collectionName
         } = req.body;
+
+        // Check if collectionName is provided
+        if (!collectionName) {
+            return res.status(400).send('Collection name is required');
+        }
         
         // Prepare the registration data for Firestore
         const registrationData = {
+            uid,
+            status,
             firstName,
             lastName,
             email,
@@ -90,9 +104,13 @@ app.post('/trainingregistration', async (req, res) => {  // eg. http://localhost
             title,
             phoneNumber,
             attendDay1,
+            day1Date,
             attendDay2,
+            day2Date,
             attendDay3,
+            day3Date,
             attendDay4,
+            day4Date,
             paymentMethod,
             invoicePerson,
             invoiceEmail,
@@ -101,8 +119,8 @@ app.post('/trainingregistration', async (req, res) => {  // eg. http://localhost
             submissionTimestamp,
         };
         
-        // Add the registration data to Firestore
-        const registrationRef = await db.collection('registrations_February_5-8_2024').add(registrationData);
+        // Use the provided collectionName for adding the document to Cloud Firestore:
+        const registrationRef = await db.collection(collectionName).add(registrationData);
         res.status(200).json({ id: registrationRef.id }); // send ID back as a JSON object (This ID is our invoice number)
     } catch (error) {
         res.status(500).send('Error adding registration: ' + error.message);

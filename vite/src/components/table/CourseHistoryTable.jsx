@@ -4,10 +4,10 @@ import React from 'react';
 const courseHistoryTable = ({ data }) => 
 {
     return(
-        <table className="table border-4 border-green-500">
+        <table className="table border-4 border-gray-900">
         <thead>
-            <tr className="divide-x-4 divide-green-500">
-                <th>Name</th>
+            <tr className="divide-x-4 divide-y-2 divide-gray-900">
+                <th>Date</th>
                 <th>Company</th>
                 <th>Course Name</th>
                 <th>Status</th>
@@ -15,8 +15,8 @@ const courseHistoryTable = ({ data }) =>
         </thead>
         <tbody>   
             {data.map((Trainee, index) => (
-                <tr key={index} className="divide-x-4 divide-y-4 divide-green-500">
-                    <td className="divide-y-4">{Trainee.employeeName}</td>
+                <tr key={index} className="divide-x-4 divide-y-2 divide-gray-900">
+                    <td>{Trainee.trainingDate}</td>
                     <td>{Trainee.company}</td>
                     <td>{Trainee.courseName}</td>
                     <td>{Trainee.status}</td>

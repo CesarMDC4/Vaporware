@@ -13,7 +13,7 @@ const Service6 = () => {
     
   ]
   return (
-    <div className="pt-4">
+    <div className="pt-10 overflow-hidden">
       <div className="bg-gradient-to-t from-stone-300 via-zinc-300 to-white pb-24">
         <div className="text-center m-auto pt-11 ">
           <p class="text-xl font-bold pb-5">Training & Technical Support</p>
