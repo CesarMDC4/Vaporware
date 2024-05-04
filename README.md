@@ -60,8 +60,13 @@
     <img src="https://www.cypresseg.com/img/logo/CypressEG.png" alt="Logo" width="200" height="80">
   </a>
 
+Cypress Engineering Group (CEG) seeks to elevate their client experiences through an interactive online portal. 
 
-The Cypress Engineering Group (CEG) seeks to elevate client experience through an online portal. Our team, Vaporware, is developing this portal to modernize training services and registration while showcasing CEG to prospective clients. The portal will feature way for registered users to sign-up for in-person or online training with an integrated payment system for a seamless registration experience and checkout. Users can create accounts to access a history of their past trainings. An administrator account will facilitate efficient user account management and training service history through a well-maintained database. The portal will also include a contact page for direct communication with CEG and dedicated sections displaying their projects and other services. Team Vaporwave's mission is to engineer a feature rich and user-friendly portal that not only simplifies client interactions but also serves as a testament to the remarkable expertise and achievements of Cypress Engineering Group. 
+Team Vaporware has developed this CEG portal to modernize CEG's training services and registration while showcasing CEG to prospective clients. This portal lets registered users sign-up, with an integrated payment system and a seamless registration experience. 
+Prospective clients can create accounts to access and view a history of their past trainings. An administrator account will facilitate efficient user account management and training service history through a well-maintained database. 
+
+This portal has a contact page for direct communication with CEG Staff and dedicated sections displaying their current projects, with other services. 
+Team Vaporware has created this feature rich and user-friendly portal that not only simplifies client interactions but also will serve as a testament to the remarkable expertise and achievements of Cypress Engineering Group. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -241,7 +246,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+<!-- Team Vaporware -->
+## Team Vaporware 
+Abhishek Prasad, Bryant Galo, Cesar Martin Del Campo, Colton Carvalho, Elesia Than, Leah Granado, Sachal Ali, Zetong Zheng
 
 
 
