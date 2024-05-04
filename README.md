@@ -60,10 +60,13 @@
     <img src="https://www.cypresseg.com/img/logo/CypressEG.png" alt="Logo" width="200" height="80">
   </a>
 
+Cypress Engineering Group (CEG) seeks to elevate their client experiences through an interactive online portal. 
 
-The Cypress Engineering Group (CEG) seeks to elevate their client experience through an online portal. Our team, Vaporware, has developed this portal to modernize CEG's training services and registration while showcasing CEG to prospective clients. The portal lets registered users sign-up for in-person or online training with an integrated payment system and a seamless registration experience. 
+Team Vaporware has developed this CEG portal to modernize CEG's training services and registration while showcasing CEG to prospective clients. This portal lets registered users sign-up, with an integrated payment system and a seamless registration experience. 
+Prospective clients can create accounts to access and view a history of their past trainings. An administrator account will facilitate efficient user account management and training service history through a well-maintained database. 
 
-Prospective users can create accounts to access and view a history of their past trainings. An administrator account will facilitate efficient user account management and training service history through a well-maintained database. The portal has a contact page for direct communication with CEG Staff and dedicated sections displaying their current projects, with other services. Team Vaporware has created this feature rich and user-friendly portal that not only simplifies client interactions but also will serve as a testament to the remarkable expertise and achievements of Cypress Engineering Group. 
+This portal has a contact page for direct communication with CEG Staff and dedicated sections displaying their current projects, with other services. 
+Team Vaporware has created this feature rich and user-friendly portal that not only simplifies client interactions but also will serve as a testament to the remarkable expertise and achievements of Cypress Engineering Group. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
