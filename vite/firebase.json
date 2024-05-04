@@ -1,0 +1,25 @@
+{
+  "hosting": {
+    "public": "dist",
+    "rewrites": [
+      { "source": "/home/**", "destination": "/home.html" },
+      { "source": "/services/**", "destination": "/services.html" },
+      { "source": "/service1/**", "destination": "/service1.html" },
+      { "source": "/service2/**", "destination": "/service2.html" },
+      { "source": "/service3/**", "destination": "/service3.html" },
+      { "source": "/service4/**", "destination": "/service4.html" },
+      { "source": "/service5/**", "destination": "/service5.html" },
+      { "source": "/service6/**", "destination": "/service6.html" },
+      { "source": "/contact/**", "destination": "/contact.html" },
+      { "source": "/training/**", "destination": "/training.html" },
+      { "source": "/coursecatalog/**", "destination": "/coursecatalog.html" },
+      { "source": "/register/**", "destination": "/register.html" },
+      { "source": "/about/**", "destination": "/about.html" },
+      { "source": "/login/**", "destination": "/login.html" },
+      { "source": "/reset/**", "destination": "/reset.html" },
+      { "source": "/cart/**", "destination": "/cart.html" },
+      { "source": "/coursehistory/**", "destination": "/coursehistory.html" },
+      { "source": "**", "destination": "/index.html" }
+    ]
+  }
+}
