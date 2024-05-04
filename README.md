@@ -243,7 +243,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+<!-- Team Vaporware -->
+## Team Vaporware 
+Abhishek Prasad, Bryant Galo, Cesar Martin Del Campo, Colton Carvalho, Elesia Than, Leah Granado, Sachal Ali, Zetong Zheng
 
 
 
