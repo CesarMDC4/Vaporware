@@ -47,7 +47,7 @@ const Home = () => {
           <div className="max-w-sm bg-white shadow-md rounded-lg pt-4">
             <div className="p-5 bg-transparent" style={{ marginBottom: "+20px" }}>
               <div className="flex justify-center items-center mb-4"> 
-                <img src="/src/assets/img/logo/CypressEG.svg" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
+                <img src="/CypressEG.svg" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
               </div>
               <a href='/about' className="block">
                 <h2 className="mb-4 text-lg tracking-tight text-black text-center hover:text-blue-600">Cypress Engineering Group</h2>

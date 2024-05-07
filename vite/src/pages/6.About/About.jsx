@@ -142,54 +142,54 @@ const About = () => {
 
     const logos = [
         // Add the URLs of your logos here
-        'src/assets/img/clients/American_Cooling.png',
-        'src/assets/img/clients/Andy Boy Logo 2.jpg',
-        'src/assets/img/clients/Bear-Creek-logo.jpg',
-        'src/assets/img/clients/Bornt Family Farms Logo.gif',
-        'src/assets/img/clients/Candelaria.png',
-        'src/assets/img/clients/Capurro Farms.bmp',
+        '/clients/American_Cooling.png',
+        '/clients/Andy Boy Logo 2.jpg',
+        '/clients/Bear-Creek-logo.jpg',
+        '/clients/Bornt Family Farms Logo.gif',
+        '/clients/Candelaria.png',
+        '/clients/Capurro Farms.bmp',
 
-        'src/assets/img/clients/central cold storage.png',
-        'src/assets/img/clients/CentralCoastCooling.jpg',
-        'src/assets/img/clients/Coke Farms.png',
-        'src/assets/img/clients/COX LOGO 1 reflex.jpg',
-        'src/assets/img/clients/Crop Production Services.png',
-        'src/assets/img/clients/dglogo2.bmp',
+        '/clients/central cold storage.png',
+        '/clients/CentralCoastCooling.jpg',
+        '/clients/Coke Farms.png',
+        '/clients/COX LOGO 1 reflex.jpg',
+        '/clients/Crop Production Services.png',
+        '/clients/dglogo2.bmp',
 
-        'src/assets/img/clients/dolelogo.jpg',
-        'src/assets/img/clients/driscollslogo.gif',
-        'src/assets/img/clients/Earthbound_Farm_Organic.jpg',
-        'src/assets/img/clients/Crop Production Services.png',
-        'src/assets/img/clients/Field Fresh Farms.png',
-        'src/assets/img/clients/foxy-logo.jpg',
+        '/clients/dolelogo.jpg',
+        '/clients/driscollslogo.gif',
+        '/clients/Earthbound_Farm_Organic.jpg',
+        '/clients/Crop Production Services.png',
+        '/clients/Field Fresh Farms.png',
+        '/clients/foxy-logo.jpg',
 
-        'src/assets/img/clients/Fresh_Express.jpg',
-        'src/assets/img/clients/GloriAnnFarmsLogo.png',
-        'src/assets/img/clients/golden acre farms.jpg',
-        'src/assets/img/clients/Growers Express.jpg',
-        'src/assets/img/clients/Growers Transplanting.png',
-        'src/assets/img/clients/Mann_Packing_new.png',
+        '/clients/Fresh_Express.jpg',
+        '/clients/GloriAnnFarmsLogo.png',
+        '/clients/golden acre farms.jpg',
+        '/clients/Growers Express.jpg',
+        '/clients/Growers Transplanting.png',
+        '/clients/Mann_Packing_new.png',
 
-        'src/assets/img/clients/logo-ClassicFarmsLogoRGB.png',
-        'src/assets/img/clients/Mission Produce.png',
-        'src/assets/img/clients/Ocean Mist Logo.jpg',
-        'src/assets/img/clients/logo_organicgirl.png',
-        'src/assets/img/clients/PFGLedyard.png',
-        'src/assets/img/clients/Silva Farms Logo 2.png',
+        '/clients/logo-ClassicFarmsLogoRGB.png',
+        '/clients/Mission Produce.png',
+        '/clients/Ocean Mist Logo.jpg',
+        '/clients/logo_organicgirl.png',
+        '/clients/PFGLedyard.png',
+        '/clients/Silva Farms Logo 2.png',
 
-        'src/assets/img/clients/SmartWash Solutions.png',
-        'src/assets/img/clients/Southern Vacuum Cooling.jpg',
-        'src/assets/img/clients/Tanimura_and_Antle.png',
-        'src/assets/img/clients/Taylor Farms California-1.png',
-        'src/assets/img/clients/Taylor_Farms_Retail-logo.jpg',
-        'src/assets/img/clients/True_Leaf_Farms.png',
+        '/clients/SmartWash Solutions.png',
+        '/clients/Southern Vacuum Cooling.jpg',
+        '/clients/Tanimura_and_Antle.png',
+        '/clients/Taylor Farms California-1.png',
+        '/clients/Taylor_Farms_Retail-logo.jpg',
+        '/clients/True_Leaf_Farms.png',
         
-        'src/assets/img/clients/TWE Crest Medium News Preview.jpg',
-        'src/assets/img/clients/Veg Tech SCS Logo 10-5-15 c.jpg',
-        'src/assets/img/clients/Western Precooling Logo.jpg',
-        'src/assets/img/clients/American_Cooling.png',
-        'src/assets/img/clients/Andy Boy Logo 2.jpg',
-        'src/assets/img/clients/Bear-Creek-logo.jpg',
+        '/clients/TWE Crest Medium News Preview.jpg',
+        '/clients/Veg Tech SCS Logo 10-5-15 c.jpg',
+        '/clients/Western Precooling Logo.jpg',
+        '/clients/American_Cooling.png',
+        '/clients/Andy Boy Logo 2.jpg',
+        '/clients/Bear-Creek-logo.jpg',
         // ...
     ];  
 
@@ -432,7 +432,7 @@ const About = () => {
             {/* You'd replicate this structure for each team member */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/sefa.jpg" className="img-fluid" alt="Sefa Isik"/>
+                <img src="/sefa.jpg" className="img-fluid" alt="Sefa Isik"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Sefa Isik</h4>
@@ -450,7 +450,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/Metin.png" className="img-fluid" alt="Metin Serttunc"/>
+                <img src="/Metin.png" className="img-fluid" alt="Metin Serttunc"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Metin Serttunc</h4>
@@ -468,7 +468,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/scott.png" className="img-fluid" alt="Scott Stroshane"/>
+                <img src="/Scott.png" className="img-fluid" alt="Scott Stroshane"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Scott Stroshane</h4>
@@ -486,7 +486,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/Steven.png" className="img-fluid" alt="Steven E Rawson"/>
+                <img src="/Steven.png" className="img-fluid" alt="Steven E Rawson"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Steven E Rawson</h4>
@@ -504,7 +504,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/Chahan.png" className="img-fluid" alt="Chahan Shah"/>
+                <img src="/Chahan.png" className="img-fluid" alt="Chahan Shah"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Chahan Shah</h4>
@@ -522,7 +522,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/Rod.jpg" className="img-fluid" alt="Rod Revera"/>
+                <img src="/Rod.jpg" className="img-fluid" alt="Rod Revera"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Rod Revera</h4>
@@ -540,7 +540,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/mfatihkonus.jpg" className="img-fluid" alt="Fatih Konus"/>
+                <img src="/mfatihkonus.jpg" className="img-fluid" alt="Fatih Konus"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Fatih Konus</h4>
@@ -558,7 +558,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/JulieLin.png" className="img-fluid" alt="Julie Lin"/>
+                <img src="/JulieLin.png" className="img-fluid" alt="Julie Lin"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Julie Lin</h4>
@@ -576,7 +576,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/Hakan.png" className="img-fluid" alt="Hakan Eren"/>
+                <img src="/Hakan.png" className="img-fluid" alt="Hakan Eren"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Hakan Eren</h4>
@@ -594,7 +594,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/Daniel.png" className="img-fluid" alt="Daniel Soto"/>
+                <img src="/Daniel.png" className="img-fluid" alt="Daniel Soto"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Daniel Soto</h4>
@@ -612,7 +612,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/placeholder_female.png" className="img-fluid" alt="Meselina Garcia"/>
+                <img src="/placeholder_female.png" className="img-fluid" alt="Meselina Garcia"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Meselina Garcia</h4>
@@ -630,7 +630,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/placeholder_female.png" className="img-fluid" alt="Kathryn Kroeze"/>
+                <img src="/placeholder_female.png" className="img-fluid" alt="Kathryn Kroeze"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Kathryn Kroeze</h4>
@@ -648,7 +648,7 @@ const About = () => {
             {/* Add more team members similarly */}
             <div className="col-lg-3 col-md-4 wow fadeInUp centered" style={{ ...colLGStyle, ...centeredStyle }}>
               <div className="member">
-                <img src="src/assets/img/RobbyKroeze.png" className="img-fluid" alt="Robby Kroeze"/>
+                <img src="/RobbyKroeze.png" className="img-fluid" alt="Robby Kroeze"/>
                 <div className="member-info">
                   <div className="member-info-content"> 
                     <h4>Robby Kroeze</h4>
