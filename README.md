@@ -170,22 +170,21 @@ To get a local copy up and running follow these simple example steps.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Features-->
-## Features & Estimated Project Delivery
-
+## Features 
 - **Front End User Interface And Features**
-  - Full Navigation Bar Highlighting
+  - Seamless User Navigation
   - Mobile Menu Resizable Feature
-  - Google Maps API Implemented
+  - Google Maps API 
 <br></br>
-- **Firebase Backend Database**
+- **Firebase Firestore Backend Database**
   - Custom Invoice System
   - User Authentication with Unique User ID
   - User 'Course History' feature
-  - Custom Google App Scripts
+  - Custom Google App Scripts to automate client data to training pipeline 
  <br></br>
 - **Firebase User Authentication** 
   - Login page 
-  - Client customer account creation with admin 
+  - Client customer account creation with training registration
   - Password reset functionality
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -223,6 +222,10 @@ After you arrive at this page you can run existing tests or create your own.
 
 
 ## Deployment
+The app is currently deployed on 
+
+https://vaporware-4b2bc.firebaseapp.com/
+
 <br></br>
 <!-- CONTRIBUTING -->
 ## Developer Instructions 
