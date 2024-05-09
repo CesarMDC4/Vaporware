@@ -11,9 +11,9 @@ const Home = () => {
           <p class="pb-5">Click below to go to our new training registration page for more info and to register.</p>
           
 
-          <div className="flex justify-center items-center mb-4"> 
-            <img src="/src/assets/img/logo/CypressEG.svg" alt="Cypress Engineering Group Logo" className="h-20 w-auto" /> 
-          </div>
+          <a href = "https://vaporware-4b2bc.web.app/Training/Register" class="bg-green-900 text-white hover:bg-white hover:text-green-500 font-bold py-2 px-3 rounded-full mb-5">
+            Register Now!
+          </a>
 
           {/* Space between header and service cards */}
           <div class="my-10"></div>
